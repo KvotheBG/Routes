@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRoadsTable extends Migration
+class CreateRoadTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateRoadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('roads', function (Blueprint $table) {
+        Schema::create('road_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('city_x');
-            $table->integer('city_y');
-            $table->integer('road_type_id');
-            $table->integer('speed_limit');
-            $table->integer('distance_km');
+            $table->string('type_name');
+            $table->integer('delay_factor');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateRoadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roads');
+        Schema::dropIfExists('road_types');
     }
 }

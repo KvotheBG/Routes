@@ -16,6 +16,9 @@ class CreateGasStationsTable extends Migration
         Schema::create('gas_station', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->integer('city_id');
+            $table->integer('distance_to_the_city');
+            $table->integer('road_id');
             $table->integer('disel_price');
             $table->integer('gasoline_price');
             $table->integer('gas_price');
