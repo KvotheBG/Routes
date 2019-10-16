@@ -176,7 +176,7 @@ a {
 }
 
 a:hover {
-  color: #1d68a7;
+  color: #28a745;
   text-decoration: underline;
 }
 
@@ -3154,12 +3154,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #3490dc;
+  color: #38c172;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #1d68a7;
+  color: #28a745;
   text-decoration: underline;
 }
 
@@ -4799,7 +4799,7 @@ input[type=button].btn-block {
 }
 
 .card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-radius: calc(0.25rem - 1px);
 }
 
 .card-header + .list-group .list-group-item:first-child {
@@ -5036,7 +5036,7 @@ input[type=button].btn-block {
 
 .page-link:hover {
   z-index: 2;
-  color: #1d68a7;
+  color: #28a745;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -10435,7 +10435,7 @@ button.bg-dark:focus {
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #1d68a7 !important;
+  color: #28a745 !important;
 }
 
 .text-secondary {

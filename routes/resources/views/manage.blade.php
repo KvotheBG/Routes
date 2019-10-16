@@ -13,7 +13,7 @@
                             </div>
                         @endif
                         
-                        <h3>Home</h3>
+                        <h3>Manage</h3>
                     </div>
                 </div>
             </div>
