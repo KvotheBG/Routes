@@ -13,17 +13,17 @@ class CreateGasStationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('gas_station', function (Blueprint $table) {
+        Schema::create('gas_stations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('city_id');
-            $table->integer('distance_to_the_city');
-            $table->integer('road_id');
-            $table->integer('disel_price');
-            $table->integer('gasoline_price');
-            $table->integer('gas_price');
-            $table->integer('electricity_price');
-            $table->integer('metan_price');
+            $table->decimal('distance_to_the_city', 4, 2);
+            $table->decimal('road_id', 4, 2);
+            $table->decimal('disel_price', 4, 2);
+            $table->decimal('gasoline_price', 4, 2);
+            $table->decimal('gas_price', 4, 2);
+            $table->decimal('electricity_price', 4, 2);
+            $table->decimal('metan_price', 4, 2);
             $table->timestamps();
         });
     }

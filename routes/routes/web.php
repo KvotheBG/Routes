@@ -11,4 +11,11 @@
 |
 */
 
-Route::get('/', 'IndexPageController@index');
+
+Route::get('/admin', 'AdminController@index')->name('adminPanel');
+Route::resource('city', 'CityController');
+Route::resource('gas_station', 'GasStationController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

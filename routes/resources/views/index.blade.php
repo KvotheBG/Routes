@@ -10,8 +10,8 @@
 </head>
 <body>
 	<div>
-		<!-- @yield('layouts.header') -->
-		@include('layouts.header')
+		@yield('header')
+
 	</div>
 </body>
 </html>
