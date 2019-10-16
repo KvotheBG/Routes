@@ -11,8 +11,8 @@
 |
 */
 
-
-Route::get('/admin', 'AdminController@index')->name('adminPanel');
+Route::get('/', 'HomeController@index');
+Route::get('/manage', 'ManageController@index');
 Route::resource('city', 'CityController');
 Route::resource('gas_station', 'GasStationController');
 

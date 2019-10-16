@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <link rel="icon" href="{{ asset('images/logo.png') }}">
@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Routes') }}</title>
+    <title>home</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

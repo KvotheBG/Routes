@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>create</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-	<h1>Create</h1>
-	<div>
+@extends('layouts.app')
 
-	{!! Form::open(['action' => 'GasStationController@store']) !!}
-	    {!! Form::select('city', $plucked) !!}
-	    {!! Form::number('distance to city', null, ['placeholder'=>'distance to the city']) !!}
-	    {!! Form::select('road', $road_id) !!}
-	    {!! Form::submit('create') !!}
-	{!! Form::close() !!}
-	</div>
-</body>
-</html>
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <h3>Manage</h3>
+                        {!! Form::open(['action' => 'GasStationController@store']) !!}
+							{!! Form::select('city', $plucked) !!}
+							{!! Form::number('distance to city', null, ['placeholder'=>'distance to the city']) !!}
+							{!! Form::select('road', $road_id) !!}
+							{!! Form::submit('create') !!}
+						{!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

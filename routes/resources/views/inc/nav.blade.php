@@ -10,20 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('home') }}">Home</a>
-                </li>
-                <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('about') }}">About Us</a>
-                </li>
-                <li class="nav-item {{ Request::is('map') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="">Map</a>
-                </li>
-                @if (Auth::check() && Auth::user()->role == 'admin')
-                    <li class="nav-item {{ Request::is('manage') ? 'active' : '' }}">
-                        <a class="nav-link menu-link" href="">Manage</a>
-                    </li>
-                @endif
+
             </ul>
 
             <!-- Right Side Of Navbar -->
