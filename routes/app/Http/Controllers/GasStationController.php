@@ -35,7 +35,8 @@ class GasStationController extends Controller
         $city_id = City::all();
         $plucked = $city_id->pluck('name', 'id');
         $road = Road::all();
-        $road_id = $road->pluck('id');
+        $road_id = $road->pluck('id', 'id');
+
 
         return view('gas_station.create', compact('plucked', 'road_id'));
     }
@@ -48,7 +49,20 @@ class GasStationController extends Controller
      */
     public function store(GasStationCreateRequest $request)
     {
-        //
+        GasStation::create([
+            'name'=> $request->gas_station_name,
+            'city_id'=> $request->city,
+            'distance_to_city'=> $request->distance_to_city,
+            'road_id'=> $request->road,
+            'diesel_price'=> $request->diesel_price,
+            'gasoline_price'=> $request->gasoline_price,
+            'gas_price'=> $request->gas_price,
+            'electricity_price'=> $request->electricity_price,
+            'metan_price'=> $request->metan_price,
+        ]);
+
+        return redirect()->route('gas_station.index')
+            ->withMessage('Gas Station created successfully');
     }
 
     /**
@@ -86,7 +100,14 @@ class GasStationController extends Controller
      */
     public function update(GasStationEditRequest $request, $id)
     {
-        //
+        $city = City::find($id);
+        $city->update([
+                'name'=> $request->city_name,
+                'speed_limit'=> $request->speed_limit,
+                'distance_km'=> $request->distance_km ]);
+
+        return redirect()->route('city.index')
+            ->withMessage('City updated successfully');
     }
 
     /**
