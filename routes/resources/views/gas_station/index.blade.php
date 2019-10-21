@@ -29,7 +29,7 @@
 										Road number
 									</th>
 									<th>
-										disel_price
+										diesel_price
 									</th>
 									<th>
 										gasoline_price
@@ -69,7 +69,7 @@
 												{{ $gas_station->road_id }}
 											</th>
 											<th>
-												{{ $gas_station->disel_price }}
+												{{ $gas_station->diesel_price }}
 											</th>
 											<th>
 												{{ $gas_station->gasoline_price }}
@@ -84,10 +84,14 @@
 												{{ $gas_station->metan_price }}
 											</th>
 											<th>
-												EDIT
+												<a href="{{route('gas_station.edit', $gas_station->id)}}">EDIT</a>
 											</th>
 											<th>
-												DELETE
+											<form method="POST" action="{{ route('gas_station.destroy', $gas_station->id) }}">
+												{{ csrf_field() }}
+												{{ method_field('DELETE') }}
+												<button type="submit" class="btn btn-danger">DELETE</button>
+											</form>
 											</th>
 										</tr>
 									@endforeach

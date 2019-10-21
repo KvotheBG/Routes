@@ -35,7 +35,7 @@ class CityEditRequest extends FormRequest
     {
         return [
             'city_name.required' => 'city name required',
-            'city_name.unique' => 'this name alread exists',
+            'city_name.unique' => 'this name already exist',
             'speed_limit.required' => 'speed limit required',
             'distance_km.required' => 'distance required',
         ];

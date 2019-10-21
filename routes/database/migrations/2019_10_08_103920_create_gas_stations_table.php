@@ -16,14 +16,14 @@ class CreateGasStationsTable extends Migration
         Schema::create('gas_stations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('city_id');
-            $table->decimal('distance_to_the_city', 4, 2);
-            $table->decimal('road_id', 4, 2);
-            $table->decimal('diesel_price', 4, 2);
-            $table->decimal('gasoline_price', 4, 2);
-            $table->decimal('gas_price', 4, 2);
-            $table->decimal('electricity_price', 4, 2);
-            $table->decimal('metan_price', 4, 2);
+            $table->integer('city_id')->nullable();
+            $table->integer('distance_to_the_city')->nullable();
+            $table->integer('road_id')->nullable();
+            $table->decimal('diesel_price', 4, 2)->nullable();
+            $table->decimal('gasoline_price', 4, 2)->nullable();
+            $table->decimal('gas_price', 4, 2)->nullable();
+            $table->decimal('electricity_price', 4, 2->nullable();
+            $table->decimal('metan_price', 4, 2)->nullable();
             $table->timestamps();
         });
     }
