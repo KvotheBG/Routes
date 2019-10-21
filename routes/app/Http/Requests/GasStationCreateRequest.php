@@ -13,7 +13,7 @@ class GasStationCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class GasStationCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'gas_station_name' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'gas_station_name.required' => 'Gas Station name required',
         ];
     }
 }

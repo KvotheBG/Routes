@@ -8,6 +8,23 @@
                     <div class="card-body">
                         <h3>Manage</h3>
                         <table style="border:solid">
+                        	<tr>
+								<th>
+									Name
+								</th>
+								<th>
+									Speed limit
+								</th>
+								<th>
+									distance
+								</th>
+								<th>
+									EDIT
+								</th>
+								<th>
+									DELETE
+								</th>
+							</tr>
 							<tr>
 								<th>
 									{{$city->name}}
@@ -19,7 +36,13 @@
 									{{$city->distance_km}}
 								</th>
 								<th><a href="{{route('city.edit', $city->id)}}">EDIT</a></th>
-								<th>delete</th>
+								<th>
+									<form method="POST" action="{{ route('city.destroy', $city->id) }}">
+										{{ csrf_field() }}
+										{{ method_field('DELETE') }}
+										<button type="submit" class="btn btn-danger">DELETE</button>
+									</form>
+								</th>
 							</tr>
 						</table>
                     </div>
