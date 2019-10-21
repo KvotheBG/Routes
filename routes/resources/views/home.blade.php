@@ -1,22 +1,8 @@
 @extends('layouts.app')
+@section('title', 'Travel | Home')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-body">
-
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        
-                        <h3>Home</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div style="margin-top: 80px;" class="container">
+        <div class="home-text text-white text-center font-weight-bold">Welcome to our app!</div>
     </div>
 @endsection
