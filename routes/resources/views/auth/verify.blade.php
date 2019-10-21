@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Travel | Verify Email')
 
 @section('content')
 <div class="container">

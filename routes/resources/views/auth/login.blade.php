@@ -1,13 +1,14 @@
 @extends('layouts.app')
+@section('title', 'Travel | Login')
 
 @section('content')
-<div class="container">
+<div style="margin-top: 45px;" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header bg-dark text-success">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-light">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -53,7 +54,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button style="padding: 6px 20px 6px 20px;" type="submit" class="btn btn-success">
                                     {{ __('Login') }}
                                 </button>
 
