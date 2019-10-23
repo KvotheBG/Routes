@@ -24,10 +24,3 @@ Route::get('/manage', 'ManageController@index');
 Route::resource('city', 'CityController');
 Route::resource('gas_station', 'GasStationController');
 Route::get('/get/city/{road}/{get_city}', 'GasStationController@getCity' )->name('get.city');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-

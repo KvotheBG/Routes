@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ManageController extends Controller
+class MapController extends Controller
 {
 	public function __construct() {
-		$this->middleware(['auth', 'check_role']);
+		$this->middleware('auth');
 	}
     public function index() {
-    	return view('manage');
+    	return view('map');
     }
 }

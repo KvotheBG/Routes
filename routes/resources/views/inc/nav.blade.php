@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<nav style="box-shadow: 0 2px 3px #343a40;" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a style="font-size: 20px;" class="navbar-brand text-success font-weight-bold" href="{{ url('/') }}">
-            {{ config('app.name', 'Routes') }}
+        <a class="navbar-brand text-success font-weight-bold" href="{{ url('/') }}">
+            <img class="navbar-logo" src="{{ asset('/images/logo.png') }}" width="34px" alt="app logo">
+            {{ config('app.name', 'Travel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +11,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-
+                <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
+                    <a class="nav-link menu-link" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+                    <a class="nav-link menu-link" href="{{ route('about') }}">About us</a>
+                </li>
+                <li class="nav-item {{ Request::is('map') ? 'active' : '' }}">
+                    <a class="nav-link menu-link" href="{{ route('map') }}">Map</a>
+                </li>
+                @if (Auth::check() && Auth::user()->role == 'admin')
+                    <li class="nav-item {{ Request::is('manage') ? 'active' : '' }}">
+                        <a class="nav-link menu-link" href="">Manage</a>
+                    </li>
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->
