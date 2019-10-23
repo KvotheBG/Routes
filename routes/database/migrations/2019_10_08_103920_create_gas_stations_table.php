@@ -22,7 +22,7 @@ class CreateGasStationsTable extends Migration
             $table->decimal('diesel_price', 4, 2)->nullable();
             $table->decimal('gasoline_price', 4, 2)->nullable();
             $table->decimal('gas_price', 4, 2)->nullable();
-            $table->decimal('electricity_price', 4, 2->nullable();
+            $table->decimal('electricity_price'), 4, 2->nullable();
             $table->decimal('metan_price', 4, 2)->nullable();
             $table->timestamps();
         });

@@ -14,7 +14,7 @@
                         <h3>Create gas station</h3>
                         {!! Form::open(['action' => 'GasStationController@store']) !!}
                         {!! Form::text('gas_station_name', null, ['placeholder'=>'Name'] ) !!}
-                        {!! Form::select('road', $road_id, null,['placeholder'=>'-Road-', 'data-url'=> route('get.city')], 'id'=>'road_id') !!}
+                        {!! Form::select('road', $road_id, null,['placeholder'=>'-Road-', 'data-url'=> route('get.city'), 'id'=>'road_id']) !!}
                         {{-- {!! Form::select('city', $plucked, null,['placeholder'=>'-City-', 'id'=>'city_id']) !!} --}}
 
                                 <select   name="city_id" id="city_id">
