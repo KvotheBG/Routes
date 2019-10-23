@@ -17,7 +17,7 @@ class GasStationController extends Controller
     {   
         if($road == 0){
 
-            return response()->json(array(['city_id' => '0', 'name' => 'Първо изберете категория']));
+            return response()->json(array(['city_id' => '0', 'name' => 'First pick road']));
         }
 
         if(isset($get_city)){

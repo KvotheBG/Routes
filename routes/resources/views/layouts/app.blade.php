@@ -42,5 +42,6 @@
             $('.dark-panel').animate({'opacity': 0}, 500);
         });
     </script>
+    <script src="{{ asset('js/cityAjax.js') }}" ></script>
 </body>
 </html>

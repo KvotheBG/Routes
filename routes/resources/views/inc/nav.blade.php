@@ -22,7 +22,7 @@
                 </li>
                 @if (Auth::check() && Auth::user()->role == 'admin')
                     <li class="nav-item {{ Request::is('manage') ? 'active' : '' }}">
-                        <a class="nav-link menu-link" href="">Manage</a>
+                        <a class="nav-link menu-link" href="{{ route('manage') }}">Manage</a>
                     </li>
                 @endif
             </ul>
