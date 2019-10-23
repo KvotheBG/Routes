@@ -14,6 +14,8 @@
                         @endif
                         
                         <h3>Manage</h3>
+                        <a href="{{route('city.index')}}">City</a>
+                        <a href="{{route('gas_station.index')}}">Gas Station</a>
                     </div>
                 </div>
             </div>

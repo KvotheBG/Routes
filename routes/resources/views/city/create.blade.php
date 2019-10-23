@@ -13,9 +13,9 @@
                             @endforeach
                         </ul>
                         {!! Form::open(['action' => 'CityController@store']) !!}
-					   	{!! Form::text('city_name', null, ['placeholder'=>'name'] ) !!}
+					   	{!! Form::text('name', null, ['placeholder'=>'name'] ) !!}
 					   	{!! Form::number('speed_limit', null, ['placeholder'=>'speed limit']) !!}
-					    {!! Form::number('distance_km', null, ['placeholder'=>'distance']) !!}
+					    {!! Form::number('distance', null, ['placeholder'=>'distance']) !!}
 					    {!! Form::submit('create') !!}
 						{!! Form::close() !!}
                     </div>

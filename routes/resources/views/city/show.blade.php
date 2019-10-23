@@ -33,7 +33,7 @@
 									{{$city->speed_limit}}
 								</th>
 								<th>
-									{{$city->distance_km}}
+									{{$city->distance}}
 								</th>
 								<th><a href="{{route('city.edit', $city->id)}}">EDIT</a></th>
 								<th>

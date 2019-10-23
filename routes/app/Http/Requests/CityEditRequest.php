@@ -26,18 +26,18 @@ class CityEditRequest extends FormRequest
        $city_id = request()->route('city');
 
         return [
-            'city_name' => 'required|unique:cities,name,'.$city_id.',id',
+            'name' => 'required|unique:cities,name,'.$city_id.',id',
             'speed_limit' => 'required',
-            'distance_km' => 'required',
+            'distance' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'city_name.required' => 'city name required',
-            'city_name.unique' => 'this name already exist',
+            'name.required' => 'city name required',
+            'name.unique' => 'this name already exist',
             'speed_limit.required' => 'speed limit required',
-            'distance_km.required' => 'distance required',
+            'distance.required' => 'distance required',
         ];
     }
 }

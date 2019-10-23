@@ -40,9 +40,9 @@ class CityController extends Controller
     public function store(CityCreateRequest $request)
     {
         City::create([
-            'name'=> $request->city_name,
+            'name'=> $request->name,
             'speed_limit'=> $request->speed_limit,
-            'distance_km'=> $request->distance_km,
+            'distance'=> $request->distance,
         ]);
 
         return redirect()->route('city.index')
@@ -86,9 +86,9 @@ class CityController extends Controller
     {
         $city = City::find($id);
         $city->update([
-                'name'=> $request->city_name,
+                'name'=> $request->name,
                 'speed_limit'=> $request->speed_limit,
-                'distance_km'=> $request->distance_km ]);
+                'distance'=> $request->distance ]);
 
         return redirect()->route('city.index')
             ->withMessage('City updated successfully');

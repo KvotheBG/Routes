@@ -13,9 +13,9 @@
                         </ul>
                         <h3>Manage</h3>
                         {!! Form::model($city, ['method' => 'PUT', 'route' => ['city.update', $city->id]]) !!}
-    					{!! Form::text('city_name', $city->name ) !!}
+    					{!! Form::text('name', $city->name ) !!}
     					{!! Form::number('speed_limit', $city->speed_limit) !!}
-	    				{!! Form::number('distance_km', $city->distance_km) !!}
+	    				{!! Form::number('distance', $city->distance) !!}
 	    				{!! Form::submit('change') !!}
 						{!! Form::close() !!}
                     </div>
