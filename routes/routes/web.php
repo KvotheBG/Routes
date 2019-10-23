@@ -25,4 +25,4 @@ Route::get('/map', 'MapController@index')->name('map');
 Route::get('/manage', 'ManageController@index')->name('manage');
 Route::resource('city', 'CityController');
 Route::resource('gas_station', 'GasStationController');
-Route::get('/get/city/{road}/{get_city}', 'GasStationController@getCity' )->name('get.city');
+Route::get('/get/city/get_city', 'GasStationController@getCity' )->name('get.city');
