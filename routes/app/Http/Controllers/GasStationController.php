@@ -25,7 +25,7 @@ class GasStationController extends Controller
         }
         else{
             $orderByCondition = "NULL";
-            $blankCityArr = array('city_id' => '0', 'name' => 'Моля изберете подкатегория');
+            $blankCityArr = array('city_id' => '0', 'name' => 'pick city');
         }
 
         $getCity = Road::select('city_x', 'city_y')->where('id', $road)->get()->toArray();
