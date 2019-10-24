@@ -15,12 +15,12 @@ class CreateRoadsTable extends Migration
     {
         Schema::create('roads', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
-            $table->unsignedBigInteger('city_x')->nullable();
-            $table->foreign('city_x')->references('id')->on('cities');
 
-            $table->unsignedBigInteger('city_y')->nullable();
-            $table->foreign('city_y')->references('id')->on('cities');
+            $table->unsignedBigInteger('city_x_id')->nullable();
+            $table->foreign('city_x_id')->references('id')->on('cities');
+
+            $table->unsignedBigInteger('city_y_id')->nullable();
+            $table->foreign('city_y_id')->references('id')->on('cities');
 
             $table->unsignedBigInteger('road_type_id')->nullable();
             $table->foreign('road_type_id')->references('id')->on('road_types');
