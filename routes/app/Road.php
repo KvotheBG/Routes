@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Road extends Model
 {
     protected $fillable = [
-    	'city_x', 'city_y', 'road_type_id', 'speed_limit', 'distance_km'
+    	'city_x_id', 'city_y_id', 'road_type_id', 'speed_limit', 'distance_km'
     ];
 
     public function cities()

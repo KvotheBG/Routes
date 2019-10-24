@@ -28,12 +28,12 @@ class GasStationController extends Controller
             $blankCityArr = array('city_id' => '0', 'name' => 'pick city');
         }
 
-        $getCity = Road::select('city_x', 'city_y')->where('id', $road)->get()->toArray();
+        $getCity = Road::select('city_x_id', 'city_y_id')->where('id', $road)->get()->toArray();
         
         isset($blankCityArr) ? $getCity=Arr::prepend($getCity, $blankCityArr) : false;
         return response()->json($getCity);
 
-
+        dd($get_city);
     }
     /**
      * Display a listing of the resource.

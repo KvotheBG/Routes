@@ -14,6 +14,7 @@ function getCity( url ) {
 			'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' )
 		},
 		type: "GET",
+		dataType: "json",
 		url: url,
 		success: function ( data, textStatus, xhr ) {
 			$( '#city_id' ).find( 'option' ).remove();
