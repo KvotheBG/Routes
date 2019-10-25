@@ -24,7 +24,11 @@
 </head>
 <body>
     <div id="app">
-        <div class="dark-panel"></div>
+        <div id="overlayer"></div>
+        <span class="loader">
+            <span class="loader-inner"></span>
+        </span>
+
         <header>
             @include('inc.nav')
         </header>
@@ -38,8 +42,9 @@
         <footer>
     </div>
     <script type="text/javascript">
-        $(window).on('load', function () {
-            $('.dark-panel').animate({'opacity': 0}, 500);
+        $(document).ready(function() {
+            $(".loader").delay(0).fadeOut("slow");
+            $("#overlayer").delay(0).fadeOut("slow");
         });
     </script>
     <script src="{{ asset('js/cityAjax.js') }}" ></script>
