@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/map', 'MapController@index')->name('map');
-Route::get('/map/result', 'MapController@makeRoute')->name('result');
+Route::get('/map/result', 'MapController@calcTime')->name('calcTime');
 Route::get('/manage', 'ManageController@index')->name('manage');
 
 Route::resource('city', 'CityController');

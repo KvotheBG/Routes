@@ -18,7 +18,7 @@
 		}
 	</style>
 </head>
-<body class="bg-light">
+<body class="bg-dark">
 	<div class="unauth-text text-center font-weight-bold">You cannot access this page!</div>
 </body>
 </html>
