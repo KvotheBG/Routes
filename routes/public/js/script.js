@@ -5,7 +5,9 @@ $(document).ready(function() {
 });
 
 // home ul
-$('.home-ul li').css('line-height', String($('.home-img').height()/3) + 'px');
+$(document).ready(function() {
+	$('.home-ul li').css('line-height', String($('.home-img').height()/3) + 'px');
+});
 $(window).resize(function() {
     $('.home-ul li').css('line-height', String($('.home-img').height()/3) + 'px');
 });
