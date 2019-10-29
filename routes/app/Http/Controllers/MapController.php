@@ -19,7 +19,7 @@ class MapController extends Controller
 
     public function calcTime(Request $request)
     {
-    	  $city_x = $request['city_x'];
+    	$city_x = $request['city_x'];
         $city_y = $request['city_y'];
         $roads = Road::all();
         $cities = City::all();
@@ -35,9 +35,9 @@ class MapController extends Controller
         for ($i=1; $i <= ($count_roads*2); $i++) { 
             
             if ($i <= $count_roads) {
-               $_distArr[$roads[$i-1]->city_x_id][$roads[$i-1]->city_y_id]=$roads[$i-1]->distance_km;
+               $_distArr[$roads[$i-1]->city_x_id][$roads[$i-1]->city_y_id]=(($roads[$i-1]->distance_km)/($roads[$i-1]->speed_limit)*60);
             }else{
-                $_distArr[$roads[$ee-1]->city_y_id][$roads[$ee-1]->city_x_id]=$roads[$ee-1]->distance_km;
+                $_distArr[$roads[$ee-1]->city_y_id][$roads[$ee-1]->city_x_id]=(($roads[$ee-1]->distance_km)/($roads[$ee-1]->speed_limit)*60);
                 $ee++;
             }
         }
@@ -47,10 +47,11 @@ class MapController extends Controller
         $b = $city_y;
 
         //initialize the array for storing
-        $S = array();//the nearest path with its parent and weight
-        $Q = array();//the left nodes without the nearest path
-        foreach(array_keys($_distArr) as $val) $Q[$val] = 99999;
-        $Q[$a] = 0;
+        $S = array();//the nearest paths with its parent and weight
+        $Q = array();//the left nodes without the nearest paths
+        foreach(array_keys($_distArr) as $val)
+            $Q[$val] = 99999;
+            $Q[$a] = 0;
 
         //start calculating
         while(!empty($Q)){
@@ -63,25 +64,22 @@ class MapController extends Controller
             unset($Q[$min]);
         }
 
-        //list the path
-        $path = array();
+        //list the paths
+        $paths = array();
         $pos = $b;
         while($pos != $a){
-            $path[] = $pos;
+            $paths[] = $pos;
             $pos = $S[$pos][0];
         }
-        $path[] = $a;
-        $path = array_reverse($path);
+        $paths[] = $a;
+        $paths = array_reverse($paths);
         $length = $S[$b][1];
         // dd($length);
-        // dd($path);
-        //print result
-        // echo "<img src='http://www.you4be.com/dijkstra_algorithm.png'>";
-        // echo "<br />From $a to $b";
-        // echo "<br />The length is ".$S[$b][1];
-        // echo "<br />Path is ".implode('->', $path);
+        // dd($paths);
+        
 
-    	return view('map.result', compact('city_y','city_x', 'path', 'length'));
+
+    	return view('map.result', compact('city_y','city_x', 'paths', 'length', 'cities'));
     }
 
 }

@@ -9,6 +9,7 @@
                 <div class="card-header bg-dark text-success">Time from A to B</div>
                 <div class="card-body bg-light">
                 	<img src="{{ asset('images/map.png') }}" class="map-img" alt="map img" draggable="false">
+                    {!! Form::open(['action' => 'MapController@calcTime','method' => 'GET']) !!}
                 		<div class="form-group map-form-group row">
                 			{!! Form::label('city_x', 'Start point', ['class' => 'col-md-5 col-form-label text-md-right']) !!}
                 			<div class="col-md-4">
