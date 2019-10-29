@@ -13,13 +13,13 @@
             <div class="about-name">
                 KvotheBG
             </div>
-            <img class="about-img" src="{{ asset('images/kiril.jpg') }}" title="Kiril Damqnovski" alt="pic">
+            <img class="about-img" src="{{ asset('images/kiril.jpg') }}" title="Kiril Damqnovski" alt="pic" draggable="false">
         </div>
         <div class="col-lg-6 nopadding d-inline-block">
             <div class="about-name">
                 Martin G
             </div>
-            <img class="about-img" src="{{ asset('images/martin.jpg') }}" title="Martin Georgiev" alt="pic">
+            <img class="about-img" src="{{ asset('images/martin.jpg') }}" title="Martin Georgiev" alt="pic" draggable="false">
         </div>
     </div>
 @endsection

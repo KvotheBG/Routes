@@ -2,7 +2,7 @@
 @section('title', 'Travel | Login')
 
 @section('content')
-<div style="margin-top: 45px;" class="container">
+<div class="container single-panel">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

@@ -6,24 +6,21 @@ use Illuminate\Http\Request;
 use App\City;
 use App\Road;
 
-
 class MapController extends Controller
 {
 	public function __construct() {
 		$this->middleware('auth');
 	}
     public function index() {
-    	
     	$cities = City::all();
-
-    	return view('map.map', compact('cities'));
+        $cities_arr = $cities->pluck('name', 'id');
+    	return view('map.index', compact('cities_arr'));
     }
 
-    public function makeRoute(Request $request)
+    public function calcTime(Request $request)
     {
-    	$city_x = $request['city_x'];
+    	  $city_x = $request['city_x'];
         $city_y = $request['city_y'];
-
         $roads = Road::all();
         $cities = City::all();
 

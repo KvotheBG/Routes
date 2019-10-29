@@ -41,12 +41,7 @@
             Made by <span class="text-success">KvotheBG</span> & <span class="text-success">Martin G</span>, 2019
         <footer>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".loader").delay(0).fadeOut("slow");
-            $("#overlayer").delay(0).fadeOut("slow");
-        });
-    </script>
+    <script src="{{ asset('js/script.js') }}" ></script>
     <script src="{{ asset('js/cityAjax.js') }}" ></script>
 </body>
 </html>

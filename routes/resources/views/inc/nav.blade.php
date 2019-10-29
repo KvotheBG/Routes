@@ -1,7 +1,7 @@
 <nav style="box-shadow: 0 2px 3px #343a40;" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand text-success font-weight-bold" href="{{ url('/') }}">
-            <img class="navbar-logo" src="{{ asset('/images/logo.png') }}" width="34px" alt="app logo">
+            <img class="navbar-logo" src="{{ asset('/images/logo.png') }}" width="34px" alt="app logo" draggable="false">
             {{ config('app.name', 'Travel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
