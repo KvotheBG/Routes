@@ -86,7 +86,7 @@ body {
 }
 .home-ul li {
 	text-shadow: 4px 4px 1px #000;
-	min-height: 70px;
+	/*min-height: 90px;*/
 }
 .home-ul li img:hover {
 	filter: brightness(80%);
