@@ -2,23 +2,12 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-body">
-
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        
-                        <h3>Manage</h3>
-                        <a href="{{route('city.index')}}">City</a>
-                        <a href="{{route('gas_station.index')}}">Gas Station</a>
-                    </div>
-                </div>
-            </div>
+        <div class="main-text">
+            Choose section
         </div>
+        <a href="" class="btn manage-btn col-md-6 col-11">Cities</a>
+        <a href="" class="btn manage-btn col-md-6 col-11">Road Types</a>
+        <a href="" class="btn manage-btn col-md-6 col-11">Roads</a>
+        <a href="" class="btn manage-btn col-md-6 col-11">Gas Stations</a>
     </div>
 @endsection
