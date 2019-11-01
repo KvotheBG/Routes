@@ -24,7 +24,7 @@
                 
                 @if (Auth::check() && Auth::user()->role == 'admin')
                     <li class="nav-item dropdown {{ Request::is('cities') || Request::is('road_types') || Request::is('roads') || Request::is('gas_stations') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@lang('home.manage')</a>
 
                         <div style="border: 1px solid #28a745;" class="dropdown-menu bg-dark no-padding">
                             <a class="dropdown-item text-white" href="{{ route('cities.index') }}">Cities</a>
