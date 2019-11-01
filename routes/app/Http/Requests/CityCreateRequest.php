@@ -24,7 +24,17 @@ class CityCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:cities,name|max:100'
+
+            'name' => 'required|unique:cities,name|max:100',
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'city name required',
+            'name.unique' => 'this name alread exists',
         ];
     }
 }
