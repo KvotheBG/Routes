@@ -38,7 +38,7 @@
         </main>
 
         <footer class="bg-dark text-center text-secondary">
-            Made by <span class="text-success">KvotheBG</span> & <span class="text-success">Martin G</span>, 2019
+            {{__('auth.Made_by')}} <span class="text-success">KvotheBG</span> & <span class="text-success">Martin G</span>, 2019
         <footer>
     </div>
     <script src="{{ asset('js/script.js') }}" ></script>
