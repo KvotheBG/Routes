@@ -12,6 +12,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
+
                     <a class="nav-link menu-link" href="{{ route('home') }}">@lang('home.home')</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
@@ -22,8 +23,16 @@
                 </li>
                 
                 @if (Auth::check() && Auth::user()->role == 'admin')
-                    <li class="nav-item {{ Request::is('manage') ? 'active' : '' }}">
-                        <a class="nav-link menu-link" href="{{ route('manage') }}">@lang('home.manage')</a>
+                    <li class="nav-item dropdown {{ Request::is('cities') || Request::is('road_types') || Request::is('roads') || Request::is('gas_stations') ? 'active' : '' }}">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Manage</a>
+
+                        <div style="border: 1px solid #28a745;" class="dropdown-menu bg-dark no-padding">
+                            <a class="dropdown-item text-white" href="{{ route('cities.index') }}">Cities</a>
+                            <a class="dropdown-item text-white" href="{{ route('road_types.index') }}">Road Types</a>
+                            <a class="dropdown-item text-white" href="{{ route('roads.index') }}">Roads</a>
+                            <a class="dropdown-item text-white" href="{{ route('gas_stations.index') }}">Gas Stations</a>
+                        </div>
+
                     </li>
                 @endif
 
@@ -50,8 +59,8 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                        <div style="border: 1px solid #28a745;" class="dropdown-menu dropdown-menu-right bg-dark no-padding" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('auth.logout') }}

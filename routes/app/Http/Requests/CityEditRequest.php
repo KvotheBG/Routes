@@ -26,7 +26,8 @@ class CityEditRequest extends FormRequest
        $city_id = request()->route('city');
 
         return [
-            'name' => 'required|unique:cities,name,'.$city_id.',id',
+
+            'name' => 'required|alpha_num|unique:cities,name,'.$city_id.',id|max:100'
         ];
     }
     public function messages()
@@ -34,6 +35,7 @@ class CityEditRequest extends FormRequest
         return [
             'name.required' => 'city name required',
             'name.unique' => 'this name already exist',
+
         ];
     }
 }

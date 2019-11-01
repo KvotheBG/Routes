@@ -9,6 +9,10 @@ use App\Http\Requests\CityEditRequest;
 
 class CityController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'check_role']);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +21,7 @@ class CityController extends Controller
     public function index()
     {   
         $cities = City::all();
-
-        return view('city.index', compact('cities'));
+        return view('cities.index', compact('cities'));
     }
 
     /**
@@ -28,7 +31,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        return view('city.create');
+        return view('cities.create');
     }
 
     /**
@@ -40,26 +43,11 @@ class CityController extends Controller
     public function store(CityCreateRequest $request)
     {
         City::create([
-            'name'=> $request->name,
-            'speed_limit'=> $request->speed_limit,
-            'distance'=> $request->distance,
+            'name'=> $request->name
         ]);
 
-        return redirect()->route('city.index')
-            ->withMessage('City created successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $city = City::find($id);
-
-        return view('city.show', compact('city'));
+        return redirect()->route('cities.index')
+            ->withMessage('City <span class="bold">created</span> successfully!');
     }
 
     /**
@@ -71,8 +59,7 @@ class CityController extends Controller
     public function edit($id)
     {
         $city = City::find($id);
-
-        return view('city.edit', compact('city'));
+        return view('cities.edit', compact('city'));
     }
 
     /**
@@ -86,12 +73,11 @@ class CityController extends Controller
     {
         $city = City::find($id);
         $city->update([
-                'name'=> $request->name,
-                'speed_limit'=> $request->speed_limit,
-                'distance'=> $request->distance ]);
+            'name' => $request->name
+        ]);
 
-        return redirect()->route('city.index')
-            ->withMessage('City updated successfully');
+        return redirect()->route('cities.index')
+            ->withMessage('City <span class="bold">edited</span> successfully!');
     }
 
     /**
@@ -105,7 +91,7 @@ class CityController extends Controller
         $city = City::find($id);
 
         $city->delete();
-        return redirect()->route('city.index')
-                ->withMessage('City deleted!');
+        return redirect()->route('cities.index')
+                ->withMessage('City <span class="bold">deleted</span> successfully!');
     }
 }

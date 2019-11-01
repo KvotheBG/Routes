@@ -12,10 +12,10 @@ class GasStation extends Model
 
     public function road()
     {
-    	return $this->belongsTo('App\GasStation');
+    	return $this->belongsTo('App\Road');
     }
     public function city()
     {
-    	return $this->belongsTo('App\GasStation');
+    	return $this->belongsTo('App\City');
     }
 }
