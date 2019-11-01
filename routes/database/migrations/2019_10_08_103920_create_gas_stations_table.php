@@ -20,7 +20,7 @@ class CreateGasStationsTable extends Migration
             $table->unsignedBigInteger('city_id')->nullable();
             $table->foreign('city_id')->references('id')->on('cities');
 
-            $table->unsignedBigInteger('road_id')->nullable();
+            $table->unsignedBigInteger('road_id')->default('1');
             $table->foreign('road_id')->references('id')->on('roads');
 
             $table->integer('distance_to_the_city')->nullable();

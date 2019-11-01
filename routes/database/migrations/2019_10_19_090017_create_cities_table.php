@@ -16,8 +16,6 @@ class CreateCitiesTable extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('speed_limit')->nullable();
-            $table->integer('distance')->nullable();
             $table->timestamps();
         });
     }
