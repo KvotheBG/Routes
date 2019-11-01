@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <div class="home-text home-text-main">Find out<br>how long your trip will take.</div>
+        <div class="main-text">Find out<br>how long your trip will take.</div>
         <div style="margin-bottom: 50px;" class="row">
         	<div class="col-lg-7">
 	        	<img class="home-img col-lg-12" src="{{ asset('images/map_preview.png') }}" draggable="false">
@@ -25,7 +25,7 @@
         		</ul>
         	</div>
         </div>
-		<div class="home-text">It's so simple!</div>
+		<div class="main-text">It's so simple!</div>
         <a class="btn btn-lg btn-success btn-try-it" href="{{ route('map') }}">Try it now</a>
     </div>
 @endsection
