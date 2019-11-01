@@ -22,7 +22,7 @@
 								{!! Form::select('city_y', $cities_arr, 2, ['class' => 'form-control']) !!}
 							</div>
 						</div>
-						{!! Form::submit('Calculate', ['class' => 'btn btn-success map-btn float-right']) !!}
+						{!! Form::submit('Calculate', ['class' => 'btn btn-success map-btn float-right', 'style' => 'width: 120px;']) !!}
 					{!! Form::close() !!}
                 </div>
             </div>

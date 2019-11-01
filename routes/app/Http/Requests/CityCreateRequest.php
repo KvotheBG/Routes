@@ -24,19 +24,7 @@ class CityCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:cities,name',
-            'speed_limit' => 'required',
-            'distance' => 'required',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'city name required',
-            'name.unique' => 'this name alread exists',
-            'speed_limit.required' => 'speed limit required',
-            'distance.required' => 'distance required',
+            'name' => 'required|unique:cities,name|max:100'
         ];
     }
 }

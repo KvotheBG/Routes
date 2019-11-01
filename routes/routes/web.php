@@ -23,9 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/map', 'MapController@index')->name('map');
 Route::get('/map/result', 'MapController@calcTime')->name('calcTime');
-Route::get('/manage', 'ManageController@index')->name('manage');
 
-Route::resource('city', 'CityController');
-Route::resource('gas_station', 'GasStationController');
-
-Route::get('/get/city/{road?}/{get_city?}', 'GasStationController@getCity' )->name('get.city');
+Route::resource('cities', 'CityController', ['except' => ['show']]);
+Route::resource('road_types', 'RoadTypeController');
+Route::resource('roads', 'RoadController');
+Route::resource('gas_stations', 'GasStationController', ['except' => ['show']]);

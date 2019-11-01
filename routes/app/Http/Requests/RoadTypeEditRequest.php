@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CityEditRequest extends FormRequest
+class RoadTypeEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,11 @@ class CityEditRequest extends FormRequest
      */
     public function rules()
     {
-       $city_id = request()->route('city');
+        $road_id = request()->route('road_type');
 
         return [
-            'name' => 'required|alpha_num|unique:cities,name,'.$city_id.',id|max:100'
+            'type_name' => 'required|unique:road_types,type_name,'.$road_id.',id|max:100',
+            'delay_factor' => 'required|numeric'
         ];
     }
 }

@@ -17,7 +17,6 @@ class CreateCitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('speed_limit')->nullable();
-            $table->integer('distance')->nullable();
             $table->timestamps();
         });
     }

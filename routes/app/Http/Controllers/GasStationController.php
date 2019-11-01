@@ -12,29 +12,10 @@ use Illuminate\Support\Arr;
 
 class GasStationController extends Controller
 {
-
-    public function getCity($road, $get_city = NULL)
-    {   
-        if($road == 0){
-
-            return response()->json(array(['city_id' => '0', 'name' => 'First pick road']));
-        }
-
-        if(isset($get_city)){
-            $orderByCondition = $get_city;
-        }
-        else{
-            $orderByCondition = "NULL";
-            $blankCityArr = array('city_id' => '0', 'name' => 'pick city');
-        }
-
-        $getCity = Road::select('city_x_id', 'city_y_id')->where('id', $road)->get()->toArray();
-        
-        isset($blankCityArr) ? $getCity=Arr::prepend($getCity, $blankCityArr) : false;
-        return response()->json($getCity);
-
-        dd($get_city);
+    public function __construct() {
+        $this->middleware(['auth', 'check_role']);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,10 +24,7 @@ class GasStationController extends Controller
     public function index()
     {
         $gas_stations = GasStation::all();
-        
-        $cities = City::all();
-
-        return view('gas_station.index', compact('gas_stations', 'cities'));
+        return view('gas_stations.index', compact('gas_stations'));
     }
 
     /**
@@ -56,13 +34,13 @@ class GasStationController extends Controller
      */
     public function create()
     {
-        $city_id = City::all();
-        $plucked = $city_id->pluck('name', 'id');
+        $cities = City::all();
+        $cities_arr = $cities->pluck('name', 'id');
+
         $road = Road::all();
-        $road_id = $road->pluck('id', 'id');
+        $roads_arr = $road->pluck('id', 'id');
 
-
-        return view('gas_station.create', compact('plucked', 'road_id', 'city_id'));
+        return view('gas_stations.create', compact('cities_arr', 'roads_arr'));
     }
 
     /**
@@ -74,34 +52,19 @@ class GasStationController extends Controller
     public function store(GasStationCreateRequest $request)
     {
         GasStation::create([
-            'name'=> $request->gas_station_name,
-            'city_id'=> $request->city,
-            'distance_to_the_city'=> $request->distance_to_the_city,
-            'road_id'=> $request->road,
-            'diesel_price'=> $request->diesel_price,
-            'gasoline_price'=> $request->gasoline_price,
-            'gas_price'=> $request->gas_price,
-            'electricity_price'=> $request->electricity_price,
-            'metan_price'=> $request->metan_price,
+            'name'=> $request->name,
+            'city_id'=> $request->city_id,
+            'distance_to_the_city'=> $request->distance_to_city,
+            'road_id'=> $request->road_id,
+            'diesel_price'=> $request->diesel,
+            'gasoline_price'=> $request->gasoline,
+            'gas_price'=> $request->gas,
+            'electricity_price'=> $request->electricity,
+            'metan_price'=> $request->methane,
         ]);
 
-        return redirect()->route('gas_station.index')
-            ->withMessage('Gas Station created successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $gas_station = GasStation::find($id);
-        $city_id = $gas_station->city_id;
-        $city = City::find($city_id);
-
-        return view('gas_station.show', compact('gas_station', 'city'));
+        return redirect()->route('gas_stations.index')
+            ->withMessage('Gas station <span class="bold">created</span> successfully!');
     }
 
     /**
@@ -113,16 +76,14 @@ class GasStationController extends Controller
     public function edit($id)
     {
         $gas_station = GasStation::find($id);
-        $city_id = $gas_station->city_id;
-        $city = City::find($city_id);
-
+        
         $cities = City::all();
-        $plucked = $cities->pluck('name', 'id');
+        $cities_arr = $cities->pluck('name', 'id');
+
         $roads = Road::all();
-        $road_id = $roads->pluck('id', 'id');
+        $roads_arr = $roads->pluck('id', 'id');
 
-
-        return view('gas_station.edit', compact('gas_station', 'city', 'plucked', 'road_id'));
+        return view('gas_stations.edit', compact('gas_station', 'cities_arr', 'roads_arr'));
     }
 
     /**
@@ -135,20 +96,21 @@ class GasStationController extends Controller
     public function update(GasStationEditRequest $request, $id)
     {
         $gas_station = GasStation::find($id);
-        $gas_station->update([
-                'name'=> $request->gas_station_name,
-                'road_id'=> $request->road,
-                'city_id'=> $request->city,
-                'distance_to_the_city'=> $request->distance_to_the_city,
-                'diesel_price'=> $request->diesel_price,
-                'gasoline_price'=> $request->gasoline_price,
-                'gas_price'=> $request->gas_price,
-                'electricity_price'=> $request->electricity_price,
-                'metan_price'=> $request->metan_price,
-                 ]);
 
-        return redirect()->route('gas_station.index')
-            ->withMessage('Gas Station updated successfully');
+        $gas_station->update([
+            'name'=> $request->name,
+            'road_id'=> $request->road_id,
+            'city_id'=> $request->city_id,
+            'distance_to_the_city'=> $request->distance_to_city,
+            'diesel_price'=> $request->diesel,
+            'gasoline_price'=> $request->gasoline,
+            'gas_price'=> $request->gas,
+            'electricity_price'=> $request->electricity,
+            'metan_price'=> $request->methane,
+        ]);
+
+        return redirect()->route('gas_stations.index')
+            ->withMessage('Gas station <span class="bold">updated</span> successfully!');
     }
 
     /**
@@ -160,9 +122,9 @@ class GasStationController extends Controller
     public function destroy($id)
     {
         $gas_station = GasStation::find($id);
-
         $gas_station->delete();
-        return redirect()->route('gas_station.index')
-                ->withMessage('Gas Station deleted!');
+
+        return redirect()->route('gas_stations.index')
+                ->withMessage('Gas station <span class="bold">deleted</span> successfully!');
     }
 }
