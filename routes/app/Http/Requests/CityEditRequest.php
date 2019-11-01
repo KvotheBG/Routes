@@ -27,8 +27,6 @@ class CityEditRequest extends FormRequest
 
         return [
             'name' => 'required|unique:cities,name,'.$city_id.',id',
-            'speed_limit' => 'required',
-            'distance' => 'required',
         ];
     }
     public function messages()
@@ -36,8 +34,6 @@ class CityEditRequest extends FormRequest
         return [
             'name.required' => 'city name required',
             'name.unique' => 'this name already exist',
-            'speed_limit.required' => 'speed limit required',
-            'distance.required' => 'distance required',
         ];
     }
 }

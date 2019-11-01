@@ -25,8 +25,6 @@ class CityCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:cities,name',
-            'speed_limit' => 'required',
-            'distance' => 'required',
         ];
     }
 
@@ -35,8 +33,6 @@ class CityCreateRequest extends FormRequest
         return [
             'name.required' => 'city name required',
             'name.unique' => 'this name alread exists',
-            'speed_limit.required' => 'speed limit required',
-            'distance.required' => 'distance required',
         ];
     }
 }
