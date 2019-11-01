@@ -12,19 +12,24 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link menu-link" href="{{ route('home') }}">@lang('home.home')</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('about') }}">About us</a>
+                    <a class="nav-link menu-link" href="{{ route('about') }}">@lang('home.about_us')</a>
                 </li>
                 <li class="nav-item {{ Request::is('map') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('map') }}">Map</a>
+                    <a class="nav-link menu-link" href="{{ route('map') }}">@lang('home.map')</a>
                 </li>
+                
                 @if (Auth::check() && Auth::user()->role == 'admin')
                     <li class="nav-item {{ Request::is('manage') ? 'active' : '' }}">
-                        <a class="nav-link menu-link" href="{{ route('manage') }}">Manage</a>
+                        <a class="nav-link menu-link" href="{{ route('manage') }}">@lang('home.manage')</a>
                     </li>
                 @endif
+
+                {{-- Language --}}
+                <li><a href="locale/en">en</a></li>
+                <li><a href="locale/fr">fr</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -32,11 +37,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a style="padding: 8px 16px 8px 16px !important;" class="nav-link text-white bg-success" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a style="padding: 8px 16px 8px 16px !important;" class="nav-link text-white bg-success" href="{{ route('login') }}">{{ __('auth.login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link text-success " href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link text-success " href="{{ route('register') }}">{{ __('auth.register') }}</a>
                         </li>
                     @endif
                 @else
@@ -49,7 +54,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('auth.logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

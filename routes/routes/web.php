@@ -13,10 +13,10 @@
 
 
 Route::get('/', function () {
-    return view('home');
+	return view('home');
 });
 Route::get('/unauthorized', function () {
-    return view('unauthorized');
+	return view('unauthorized');
 });
 
 Auth::routes();
@@ -30,3 +30,7 @@ Route::get('/manage', 'ManageController@index')->name('manage');
 Route::resource('city', 'CityController');
 Route::resource('gas_station', 'GasStationController');
 
+Route::get('/locale/{locale}', function($locale){
+	Session::put('locale', $locale);
+	return redirect()->back();
+});
