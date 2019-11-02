@@ -37,3 +37,6 @@ Route::get('/locale/{locale}', function($locale){
 	return redirect()->back();
 });
 
+Route::fallback(function () {
+    return redirect()->route('home');
+});

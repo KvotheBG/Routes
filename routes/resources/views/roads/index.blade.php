@@ -3,7 +3,7 @@
 @section('title', 'Manage | Roads')
 
 @section('content')
-	<div class="main-text crud-heading">Roads</div>
+	<div class="main-text crud-heading">{{__('auth.Roads')}}</div>
 	@if (Session::has('message'))
 		<div class="alert alert-success alert-fade col-md-9 mx-auto" role="alert">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -13,11 +13,11 @@
 	<table class="table table-dark col-md-9 mx-auto text-center">
 		<thead class="text-success font-weight-bold bg-dark">
 			<tr>
-				<th>City X</th>
-				<th>City Y</th>
-				<th>Road type</th>
-				<th>Speed limit</th>
-				<th>Distance</th>
+				<th>{{__('auth.City_A')}}</th>
+				<th>{{__('auth.City_B')}}</th>
+				<th>{{__('auth.Road_types')}}</th>
+				<th>{{__('auth.Speed_limit')}}</th>
+				<th>{{__('auth.Distance')}}</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -41,15 +41,15 @@
 				<td>{{ $road->speed_limit }} km/h</td>
 				<td>{{ $road->distance_km }} km</td>
 				<td>
-					<a href="{{ route('roads.edit', $road->id) }}" class="text-warning">Update</a>
+					<a href="{{ route('roads.edit', $road->id) }}" class="text-warning">{{__('auth.Update')}}</a>
 				</td>
 				<td>
 					{!! Form::open(['route' => ['roads.destroy', $road->id], 'method' => 'DELETE']) !!}
-						{!! Form::submit('Delete', ['class' => 'btn btn-link text-danger']) !!}
+						{!! Form::submit(__('auth.Delete'), ['class' => 'btn btn-link text-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>
 		@endforeach
 	</table>
-	<a href="{{ route('roads.create') }}" class="btn btn-big btn-success">Create</a>
+	<a href="{{ route('roads.create') }}" class="btn btn-big btn-success">{{__('auth.Create')}}</a>
 @endsection

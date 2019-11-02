@@ -27,10 +27,10 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@lang('home.manage')</a>
 
                         <div style="border: 1px solid #28a745;" class="dropdown-menu bg-dark no-padding">
-                            <a class="dropdown-item text-white" href="{{ route('cities.index') }}">Cities</a>
-                            <a class="dropdown-item text-white" href="{{ route('road_types.index') }}">Road Types</a>
-                            <a class="dropdown-item text-white" href="{{ route('roads.index') }}">Roads</a>
-                            <a class="dropdown-item text-white" href="{{ route('gas_stations.index') }}">Gas Stations</a>
+                            <a class="dropdown-item text-white" href="{{ route('cities.index') }}">{{__('auth.Cities')}}</a>
+                            <a class="dropdown-item text-white" href="{{ route('road_types.index') }}">{{__('auth.Road_Types')}}</a>
+                            <a class="dropdown-item text-white" href="{{ route('roads.index') }}">{{__('auth.Roads')}}</a>
+                            <a class="dropdown-item text-white" href="{{ route('gas_stations.index') }}">{{__('auth.Gas_Stations')}}</a>
                         </div>
 
                     </li>

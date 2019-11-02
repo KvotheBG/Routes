@@ -3,7 +3,7 @@
 @section('title', 'Manage | Gas Stations')
 
 @section('content')
-	<div class="main-text crud-heading">Gas Stations</div>
+	<div class="main-text crud-heading">{{__('auth.Gas_Stations')}}</div>
 	@if (Session::has('message'))
 		<div class="alert alert-success alert-fade col-md-10 mx-auto" role="alert">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -12,15 +12,15 @@
 	@endif
 	<table class="table table-dark col-md-10 mx-auto text-center">
 		<tr class="text-success font-weight-bold bg-dark">
-			<th>Name</th>
-			<th>City</th>
-			<th>Road</th>
-			<th>Distance to city</th>
-			<th>Diesel</th>
-			<th>Gasoline</th>
-			<th>Gas</th>
-			<th>Methane</th>
-			<th>Electricity</th>
+			<th>{{__('auth.name')}}</th>
+			<th>{{__('auth.City')}}</th>
+			<th>{{__('auth.Road')}}</th>
+			<th>{{__('auth.Distance_to_the_city')}}</th>
+			<th>{{__('auth.Diesel')}}</th>
+			<th>{{__('auth.Gasoline')}}</th>
+			<th>{{__('auth.Gas')}}</th>
+			<th>{{__('auth.Methane')}}</th>
+			<th>{{__('auth.Electricity')}}</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -56,15 +56,15 @@
 					{{ $gas_station->electricity_price }}
 				</td>
 				<td>
-					<a href="{{ route('gas_stations.edit', $gas_station->id) }}" class="text-warning">Update</a>
+					<a href="{{ route('gas_stations.edit', $gas_station->id) }}" class="text-warning">{{__('auth.Update')}}</a>
 				</td>
 				<td>
 					{!! Form::open(['route' => ['gas_stations.destroy', $gas_station->id], 'method' => 'DELETE']) !!}
-						{!! Form::submit('Delete', ['class' => 'btn btn-link text-danger']) !!}
+						{!! Form::submit(__('auth.Delete'), ['class' => 'btn btn-link text-danger']) !!}
 					{!! Form::close() !!}
 				</td>
 			</tr>
 		@endforeach
 	</table>
-	<a href="{{ route('gas_stations.create') }}" class="btn btn-big btn-success">Create</a>
+	<a href="{{ route('gas_stations.create') }}" class="btn btn-big btn-success">{{__('auth.Create')}}</a>
 @endsection

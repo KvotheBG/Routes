@@ -8,12 +8,12 @@
             <div class="card">
                 <div class="card-header bg-dark text-success">
                     <a href="{{ route('road_types.index') }}" class="card-header-back"><</a>
-                    Add road type
+                    {{__('auth.Add_road_type')}}
                 </div>
                 <div class="card-body bg-light">
                     {!! Form::open(['route' => ['road_types.store']]) !!}
                         <div class="form-group">
-                            {!! Form::label('type_name', 'Road type') !!}
+                            {!! Form::label('type_name', __('auth.Add_road_type')) !!}
                             {!! Form::text('type_name', old('type_name'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('type_name'))
@@ -25,7 +25,7 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('delay_factor', 'Delay factor') !!}
+                            {!! Form::label('delay_factor', __('auth.Delay_factor')) !!}
                             {!! Form::text('delay_factor', old('delay_factor'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('delay_factor'))
@@ -36,7 +36,7 @@
                             </div>
                         @endif
 
-                        {!! Form::submit('Create', ['class' => 'btn btn-normal btn-success float-right']) !!}
+                        {!! Form::submit(__('auth.Create'), ['class' => 'btn btn-normal btn-success float-right']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

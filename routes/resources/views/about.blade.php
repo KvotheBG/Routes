@@ -5,7 +5,7 @@
     <div class="container">
         <div class="main-text">
             <span style="border-bottom: 7px solid #28a745; padding: 10px;">
-                About us
+                {{__('auth.About_us')}}
             </span>
         </div>
         <div class="about-text col-lg-9 mx-auto">

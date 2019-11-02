@@ -8,13 +8,13 @@
             <div class="card">
                 <div class="card-header bg-dark text-success">
                     <a href="{{ route('cities.index') }}" class="card-header-back"><</a>
-                    Add city
+                    {{__('auth.Add_city')}}
                 </div>
                 <div class="card-body bg-light">
                     {!! Form::open(['route' => ['cities.store']]) !!}
                     
                         <div class="form-group">
-                            {!! Form::label('name', 'City name') !!}
+                            {!! Form::label('name', __('auth.City_name')) !!}
                             {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('name'))
@@ -25,7 +25,7 @@
                             </div>
                         @endif
 
-                        {!! Form::submit('Create', ['class' => 'btn btn-normal btn-success float-right']) !!}
+                        {!! Form::submit(__('auth.Create'), ['class' => 'btn btn-normal btn-success float-right']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

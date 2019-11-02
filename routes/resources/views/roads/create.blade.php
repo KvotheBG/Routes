@@ -8,12 +8,12 @@
             <div class="card">
                 <div class="card-header bg-dark text-success">
                     <a href="{{ route('roads.index') }}" class="card-header-back"><</a>
-                    Add road
+                    {{__('auth.Add_road')}}
                 </div>
                 <div class="card-body bg-light">
                     {!! Form::open(['route' => ['roads.store']]) !!}
                         <div class="form-group">
-                            {!! Form::label('city_x_id', 'City X') !!}
+                            {!! Form::label('city_x_id', __('auth.City_A')) !!}
                             {!! Form::select('city_x_id', $cities_arr, old('city_x_id'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('city_x_id'))
@@ -25,7 +25,7 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('city_y_id', 'City Y') !!}
+                            {!! Form::label('city_y_id', __('auth.City_B')) !!}
                             {!! Form::select('city_y_id', $cities_arr, old('city_y_id'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('city_y_id'))
@@ -37,7 +37,7 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('road_type_id', 'Road type') !!}
+                            {!! Form::label('road_type_id', __('auth.Road_type')) !!}
                             {!! Form::select('road_type_id', $road_types_arr, old('road_type_id'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('road_type_id'))
@@ -49,7 +49,7 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('speed_limit', 'Speed limit') !!}
+                            {!! Form::label('speed_limit', __('auth.Speed_limit')) !!}
                             {!! Form::number('speed_limit', old('speed_limit'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('speed_limit'))
@@ -61,7 +61,7 @@
                         @endif
 
                         <div class="form-group">
-                            {!! Form::label('distance', 'Distance') !!}
+                            {!! Form::label('distance', __('auth.Distance')) !!}
                             {!! Form::number('distance', old('distance'), ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('distance'))
@@ -72,7 +72,7 @@
                             </div>
                         @endif
 
-                        {!! Form::submit('Create', ['class' => 'btn btn-normal btn-success float-right']) !!}
+                        {!! Form::submit(__('auth.Create'), ['class' => 'btn btn-normal btn-success float-right']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>
