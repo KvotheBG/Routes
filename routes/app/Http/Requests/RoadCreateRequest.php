@@ -28,7 +28,7 @@ class RoadCreateRequest extends FormRequest
             'city_y_id' => 'required|different:city_x_id',
             'road_type_id' => 'required',
             'speed_limit' => 'required|numeric|integer|gt:1|lte:360',
-            'distance' => 'required|numeric|gt:1'
+            'distance' => 'required|numeric|gt:1',
         ];
     }
 

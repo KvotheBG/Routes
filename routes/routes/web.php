@@ -13,10 +13,10 @@
 
 
 Route::get('/', function () {
-    return view('home');
+	return view('home');
 });
 Route::get('/unauthorized', function () {
-    return view('unauthorized');
+	return view('unauthorized');
 });
 
 Auth::routes();
@@ -25,12 +25,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/map', 'MapController@index')->name('map');
 Route::get('/map/result', 'MapController@calcTime')->name('calcTime');
-<<<<<<< Updated upstream
 Route::get('/manage', 'ManageController@index')->name('manage');
 
 Route::resource('city', 'CityController');
 Route::resource('gas_station', 'GasStationController');
-=======
-Route::post('/map/get_fuel', 'MapController@get_fuel')->name('get_fuel');
->>>>>>> Stashed changes
 
+Route::post('/map/get_fuel', 'MapController@get_fuel')->name('get_fuel');
+
+
+Route::resource('cities', 'CityController', ['except' => ['show']]);
+Route::resource('road_types', 'RoadTypeController');
+Route::resource('roads', 'RoadController');
+Route::resource('gas_stations', 'GasStationController', ['except' => ['show']]);
+
+Route::get('/locale/{locale}', function($locale){
+	Session::put('locale', $locale);
+	return redirect()->back();
+});
+
+Route::fallback(function () {
+    return redirect()->route('home');
+});

@@ -128,18 +128,19 @@ a.text-success:hover {
 .menu-link:hover {
 	background-color: #6c757d;
 }
-<<<<<<< Updated upstream
-=======
+
 .dropdown-menu a {
 	line-height: 28px;
 }
 .dropdown-menu a:hover {
 	background-color: #28a745;
 }
+
 .green_underlined {
 	border-bottom: 7px solid #28a745;
 	padding: 10px;
 }
+
 .card-header {
 	border-bottom: none;
 	list-style: circle;
@@ -163,7 +164,7 @@ a.text-success:hover {
 	color: #fff;
 	text-decoration: none;
 }
->>>>>>> Stashed changes
+
 /* forms */
 .form-control {
 	background-color: #f8f9fa;
@@ -176,8 +177,8 @@ a.text-success:hover {
 	background-color: #f8f9fa;
 	box-shadow: 0 0 2px #28a745;
 }
-.map-btn {
-	width: 120px;
+.crud-heading {
+	margin-bottom: 45px !important;
 }
 .map-img {
 	display: block;
@@ -186,13 +187,16 @@ a.text-success:hover {
 	margin-bottom: 40px;
 	filter: drop-shadow(1px 1px 1px #000);
 }
-<<<<<<< Updated upstream
-.manage-btn {
-=======
+
 .map-form-group {
 	margin-top: -5px;
 	margin-bottom: 30px;
 }
+
+table {
+	margin-top: 30px;
+}
+
 th {
 	font-size: 16px;
 }
@@ -203,6 +207,7 @@ td, th {
 td {
 	background-color: rgba(255, 255, 255,.05);
 }
+
 .info-row {
 	border: 1px solid #28a745;
 	border-radius: 5px;
@@ -229,40 +234,26 @@ td {
 	margin-right: 40px;
 	box-shadow: 3px 0 4px #4dcb82;
 }
+
 /* create in crud */
 .btn-big {
 	margin-top: 40px;
 	padding-top: 10px;
 	padding-bottom: 10px;
->>>>>>> Stashed changes
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 0;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	margin-bottom: 32px;
-	background-color: rgb(52, 58, 64,.8);
-	color: #28a745 !important;
-	font-size: 20px;
-	border: 1px solid #28a745;
+	width: 200px;
 }
-.manage-btn:first-child {
-	margin-top: -5px;
+.btn-normal {
+	width: 150px;
+	margin-top: 10px;
 }
-.manage-btn:last-child {
-	margin-bottom: 0;
+.btn-back {
+	width: 100px;
 }
-.manage-btn:hover {
-	border: 5px solid #fff;
-	color: #fff !important;
+.bold {
 	font-weight: bold;
-	transition: border 0.5s;
-	cursor: pointer;
-}
-.map-form-group {
-	margin-top: -5px;
-	margin-bottom: 30px;
 }
 .main-text {
 	font-weight: bold;
@@ -273,10 +264,6 @@ td {
 	margin-bottom: 60px;
 	margin-top: 20px;
 	text-shadow: 3px 3px #000;
-}
-.green-underlined {
-	border-bottom: 7px solid #28a745;
-	padding: 10px;
 }
 .home-img {
 	filter: drop-shadow(7px 7px 0 #28a745);
@@ -337,7 +324,7 @@ td {
   		background-image: url('../images/wall_mobile.jpg');
   	}
 }
-<<<<<<< Updated upstream
+
 /* about page */
 /*.about-heading {
 	color: #fff;
@@ -348,11 +335,11 @@ td {
 	margin-top: 10px;
 	margin-bottom: 70px;
 }*/
-=======
+
 hr {
 	border-top: 1px solid #28a745;
 }
->>>>>>> Stashed changes
+
 .about-text {
 	color: #fff;
 	margin-top: 30px;
@@ -400,20 +387,10 @@ hr {
 .no-padding {
 	padding: 0 !important;
 }
-<<<<<<< Updated upstream
-footer {
-	flex-shrink: 0;
-	padding-top: 11px;
-	height: 44px;
-	position: absolute;
-    bottom: 0px;
-    width: 100%;
-    box-shadow: 0 -2px 3px #343a40;
-=======
+
 .alert-success {
 	text-align: center;
 	margin-top: 20px;
-	margin-bottom: 26px;
 }
 .alert-danger ul {
 	margin-bottom: 0;
@@ -422,7 +399,16 @@ footer {
 	margin-top: -5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
->>>>>>> Stashed changes
+}
+
+footer {
+	flex-shrink: 0;
+	padding-top: 11px;
+	height: 44px;
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0 -2px 3px #343a40;
 }
 /* loader */
 #overlayer {

@@ -10,9 +10,9 @@ class Road extends Model
     	'city_x_id', 'city_y_id', 'road_type_id', 'speed_limit', 'distance_km'
     ];
 
-    public function cities()
+    public function city()
     {
-    	return $this->hasMany('App\City');
+    	return $this->belongsTo('App\City');
     }
 
     public function gasStations()

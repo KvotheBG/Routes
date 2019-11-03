@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="info-row col-md-10">
-                        <div class="info-name">City Y</div>
+                        <div class="info-name">{{__('auth.City_B')}}</div>
                         <div class="info-value">
                             <?php
                             $city_y = App\City::find($road->city_y_id);
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="info-row col-md-10">
-                        <div class="info-name">Road type</div>
+                        <div class="info-name">{{__('auth.Road_type')}</div>
                         <div class="info-value">
                             <?php
                             $road_type = App\RoadType::find($road->road_type_id);
@@ -36,11 +36,11 @@
                         </div>
                     </div>
                     <div class="info-row col-md-10">
-                        <div class="info-name">Speed limit</div>
+                        <div class="info-name">{{__('auth.Speed_limit')}}</div>
                         <div class="info-value">{{ $road->speed_limit }} km/h</div>
                     </div>
                     <div class="info-row col-md-10">
-                        <div class="info-name">Distance</div>
+                        <div class="info-name">{{__('auth.Distance')}}</div>
                         <div class="info-value">{{ $road->distance_km }} km</div>
                     </div>
                 </div>

@@ -24,14 +24,21 @@ class GasStationCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'gas_station_name' => 'required',
+            'name' => 'required|max:100',
+            'city_id' => 'required',
+            'distance_to_city' => 'nullable|numeric',
+            'diesel' => 'nullable|numeric',
+            'gasoline' => 'nullable|numeric',
+            'gas' => 'nullable|numeric',
+            'methane' => 'nullable|numeric',
+            'electricity' => 'nullable|numeric'
         ];
     }
 
     public function messages()
     {
         return [
-            'gas_station_name.required' => 'Gas Station name required',
+            'city_id.required' => 'The city field is required!'
         ];
     }
 }

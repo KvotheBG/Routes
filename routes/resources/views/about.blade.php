@@ -4,13 +4,9 @@
 @section('content')
     <div class="container">
         <div class="main-text">
-<<<<<<< Updated upstream
-            <span class="green-underlined">About us</span>
-=======
-            <span class="green_underlined">
-                About us
+            <span style="border-bottom: 7px solid #28a745; padding: 10px;">
+                {{__('auth.About_us')}}
             </span>
->>>>>>> Stashed changes
         </div>
         <div class="about-text col-lg-9 mx-auto">
             Sit voluptate esse consectetur in dolor id ullamco ad nostrud consectetur enim excepteur ut sunt in exercitation sed anim excepteur pariatur minim duis occaecat aute ut ut deserunt esse qui non eu velit ad laboris amet id est veniam est pariatur ea laboris est occaecat sed amet esse ad nisi do dolor veniam occaecat et elit dolor sit adipisicing sunt consectetur dolore velit consequat officia aute deserunt consectetur enim laboris reprehenderit consequat ut aliquip et et laboris ea consequat quis dolor qui laboris laboris pariatur voluptate proident nostrud aliqua consequat anim minim culpa ad sint enim incididunt aliquip do laborum.
