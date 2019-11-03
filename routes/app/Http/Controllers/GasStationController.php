@@ -73,6 +73,19 @@ class GasStationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function show($id)
+    {
+        $gas_station = GasStation::find($id);
+        $city = City::find(GasStation::find($id)->city_id)->name;
+        return view('gas_stations.show', compact('gas_station', 'city'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit($id)
     {
         $gas_station = GasStation::find($id);

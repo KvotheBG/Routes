@@ -27,16 +27,12 @@ Route::get('/map', 'MapController@index')->name('map');
 Route::get('/map/result', 'MapController@calcTime')->name('calcTime');
 Route::get('/manage', 'ManageController@index')->name('manage');
 
-Route::resource('city', 'CityController');
-Route::resource('gas_station', 'GasStationController');
-
 Route::post('/map/get_fuel', 'MapController@get_fuel')->name('get_fuel');
 
-
-Route::resource('cities', 'CityController', ['except' => ['show']]);
+Route::resource('cities', 'CityController');
 Route::resource('road_types', 'RoadTypeController');
 Route::resource('roads', 'RoadController');
-Route::resource('gas_stations', 'GasStationController', ['except' => ['show']]);
+Route::resource('gas_stations', 'GasStationController');
 
 Route::get('/locale/{locale}', function($locale){
 	Session::put('locale', $locale);

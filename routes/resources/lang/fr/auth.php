@@ -82,5 +82,8 @@ return [
     'Electricity_price' => 'Électricité prix',
     'Add_gas_station' => "Ajouter une station d'essence",
     'Photos_and_icons:' => 'Photos et icônes:',
-
+    'Road_type_Info' => 'Type de route Info',
+    'City_info' => 'Informations sur la ville',
+    'Road_info' => 'Info route',
+    'Gas_station_info' => 'Info station service',
 ];

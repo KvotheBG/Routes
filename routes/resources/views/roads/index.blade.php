@@ -13,6 +13,7 @@
 	<table class="table table-dark col-md-9 mx-auto text-center">
 		<thead class="text-success font-weight-bold bg-dark">
 			<tr>
+				<th>{{__('auth.name')}}</th>
 				<th>{{__('auth.City_A')}}</th>
 				<th>{{__('auth.City_B')}}</th>
 				<th>{{__('auth.Road_types')}}</th>
@@ -25,6 +26,10 @@
 		@foreach($roads as $road)
 			<tr>
 				<td>
+					<a class="text-white" href="{{ route('roads.show', $road->id) }}">
+					{{ (App\Road::find($road->id))->id }}
+				</td>
+				<td>
 					{{ (App\City::find($road->city_x_id))->name }}
 				</td>
 				<td>
@@ -35,7 +40,7 @@
 						<?php
 						$road_type = App\RoadType::find($road->road_type_id);
 						?>
-						{{ $road_type->type_name }}
+						{{ $road_type->type }}
 					</a>
 				</td>
 				<td>{{ $road->speed_limit }} km/h</td>

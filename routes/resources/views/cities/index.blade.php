@@ -21,7 +21,9 @@
 		@foreach($cities as $city)
 			<tr>
 				<td>
-					{{ $city->name }}
+					<a href="{{ route('cities.show', $city->id) }}" class="text-white">
+						{{ $city->name }}
+					</a>
 				</td>	
 				<td>
 					<a href="{{ route('cities.edit', $city->id) }}" class="text-warning">{{__('auth.Update')}}</a>

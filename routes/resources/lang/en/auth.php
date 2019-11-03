@@ -85,8 +85,10 @@ return [
     'Electricity_price' => 'Electricity price',
     'Add_gas_station' => 'Add gas station',
     'Photos_and_icons:' => 'Photos and icons:',
-
-
+    'Road_type_Info' => 'Road type Info',
+    'City_info' => 'City info',
+    'Road_info' => 'Road info',
+    'Gas_station_info' => 'Gas station info',
 
 
 ];

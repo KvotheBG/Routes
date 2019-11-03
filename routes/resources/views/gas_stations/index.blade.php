@@ -27,6 +27,7 @@
 		@foreach($gas_stations as $gas_station)
 			<tr>
 				<td>
+					<a href="{{ route('gas_stations.show', $gas_station->id) }}" class="text-white">
 					{{ $gas_station->name }}
 				</td>
 				<td>
