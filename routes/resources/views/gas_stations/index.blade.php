@@ -27,18 +27,24 @@
 		@foreach($gas_stations as $gas_station)
 			<tr>
 				<td>
+<<<<<<< Updated upstream
 					<a href="{{ route('gas_stations.show', $gas_station->id) }}" class="text-white">
 					{{ $gas_station->name }}
+=======
+					<a class="text-white" href="{{ route('gas_stations.show', $gas_station->id) }}">
+						{{ $gas_station->name }}
+					</a>
+>>>>>>> Stashed changes
 				</td>
 				<td>
-					{{ (App\City::find($gas_station->city_id))->name }}
+					{{ $gas_station->city->name }}
 				</td>
 				<td>
 					{{ $gas_station->road_id }}
 				</td>
 				<td>
 					@if ($gas_station->distance_to_the_city)
-						{{ $gas_station->distance_to_the_city }} km/h
+						{{ $gas_station->distance_to_the_city }} km
 					@endif
 				</td>
 				<td>

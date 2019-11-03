@@ -18,3 +18,32 @@ window.setTimeout(function() {
         $(this).remove(); 
     });
 }, 3000);
+
+//print gas stations in map result page
+$(document).ready(function() {
+
+	$('.radio').change(function() {
+		var fuel = this.value;
+
+		// $('.fuel').each(function() {
+		// 	if ($(this).hasClass(fuel)) {
+		// 		$(this).parent().css('display', 'block');
+		// 		// $('.fuel').each(function());.css('display', 'none');
+		// 		$(this).siblings().css('display', 'none');
+		// 		$(this).css('display', 'block');
+		// 	} else {
+		// 		$(this).parent().css('display', 'none');
+		// 	}
+		// });
+
+		$('.gas-st-group').each(function() {
+			$(this).find('.fuel').each(function() {
+				if ($(this).hasClass(fuel)) {
+					$(this).css('display', 'block');
+				} else {
+					$(this).css('display', 'none');
+				}
+			});
+		});
+	});
+});

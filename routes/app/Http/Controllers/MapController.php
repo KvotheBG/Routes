@@ -8,7 +8,6 @@ use App\Road;
 use App\GasStation;
 use DB;
 
-
 class MapController extends Controller
 {
 	public function __construct() {
@@ -20,10 +19,6 @@ class MapController extends Controller
         $cities_arr = $cities->pluck('name', 'id');
         
     	return view('map.index', compact('cities_arr'));
-    }
-
-    public function get_fuel() {
-        return view('map.get_fuel');
     }
 
     public function calcTime(Request $request)
@@ -147,6 +142,46 @@ class MapController extends Controller
             $paths[$i] = intval($paths[$i]);
         }
     	return view('map.result', compact('city_y','city_x', 'paths', 'length', 'cities', 'find_roads', 'roads', 'find_gas_stations', 'gas_stations', 'time'));
+        for ($i = 0; $i < count($paths); $i++) {
+            $paths[$i] = intval($paths[$i]);
+        }
+        $time = $S[$b][1];
+
+        // Finding the gas stations in $paths and $find_roads
+       $start = 0;
+       $find_gas_stations = [];
+       $find_roads [count($find_roads)]= 0;
+       
+       for ($i=0; $i < count($paths); $i++) {
+           for ($j=0; $j < $count_gas_stations; $j++) {
+               if (($paths[$i] == $gas_stations[$j]->city_id && ($gas_stations[$j]->road_id == 1)) ) {
+                  $find_gas_stations[$start][0] = $gas_stations[$j]->id;
+                  $find_gas_stations[$start][1] = $gas_stations[$j]->diesel_price;
+                  $find_gas_stations[$start][2] = $gas_stations[$j]->gasoline_price;
+                  $find_gas_stations[$start][3] = $gas_stations[$j]->gas_price;
+                  $find_gas_stations[$start][4] = $gas_stations[$j]->electricity_price;
+                  $find_gas_stations[$start][5] = $gas_stations[$j]->metan_price;
+                  $find_gas_stations[$start][6] = $gas_stations[$j]->city_id;
+                  $find_gas_stations[$start][7] = $gas_stations[$j]->road_id;
+                  $find_gas_stations[$start][8] = $gas_stations[$j]->distance_to_the_city;
+                  $start++;
+               }
+               if ($find_roads[$i] == $gas_stations[$j]->road_id) {
+                   $find_gas_stations[$start][0] = $gas_stations[$j]->id;
+                   $find_gas_stations[$start][1] = $gas_stations[$j]->diesel_price;
+                   $find_gas_stations[$start][2] = $gas_stations[$j]->gasoline_price;
+                   $find_gas_stations[$start][3] = $gas_stations[$j]->gas_price;
+                   $find_gas_stations[$start][4] = $gas_stations[$j]->electricity_price;
+                   $find_gas_stations[$start][5] = $gas_stations[$j]->metan_price;
+                   $find_gas_stations[$start][6] = $gas_stations[$j]->city_id;
+                   $find_gas_stations[$start][7] = $gas_stations[$j]->road_id;
+                   $find_gas_stations[$start][8] = $gas_stations[$j]->distance_to_the_city;
+                   $start++;
+               }
+           }
+       }
+
+    	return view('map.result', compact('city_y','city_x', 'paths', 'time', 'cities', 'find_roads', 'roads', 'find_gas_stations', 'gas_stations'));
     }
 
 }
