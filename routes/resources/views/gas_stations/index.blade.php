@@ -27,14 +27,8 @@
 		@foreach($gas_stations as $gas_station)
 			<tr>
 				<td>
-<<<<<<< Updated upstream
 					<a href="{{ route('gas_stations.show', $gas_station->id) }}" class="text-white">
 					{{ $gas_station->name }}
-=======
-					<a class="text-white" href="{{ route('gas_stations.show', $gas_station->id) }}">
-						{{ $gas_station->name }}
-					</a>
->>>>>>> Stashed changes
 				</td>
 				<td>
 					{{ $gas_station->city->name }}
