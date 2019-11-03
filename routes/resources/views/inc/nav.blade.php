@@ -35,12 +35,23 @@
 
                     </li>
                 @endif
-
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">  
+                        {{ strtoupper (Config::get('app.locale')) }}
+                    </a>
+                    <div style="border: 1px solid #28a745;" class="dropdown-menu dropdown-flag bg-dark no-padding">
+                        <a class="dropdown-item text-white" href="locale/en">
+                            EN
+                            <img class="flag" src="{{ asset('images/uk_flag.png') }}">
+                        </a>
+                        <a class="dropdown-item text-white" href="locale/fr">
+                            FR
+                            <img class="flag" src="{{ asset('images/fr_flag.png') }}">
+                        </a>
+                    </div>
+                </li>
                 {{-- Language --}}
-                <li><a href="locale/en">en</a></li>
-                <li><a href="locale/fr">fr</a></li>
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
