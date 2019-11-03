@@ -5,11 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\City;
 use App\Road;
-<<<<<<< Updated upstream
 use App\GasStation;
-=======
 use DB;
->>>>>>> Stashed changes
+
 
 class MapController extends Controller
 {
@@ -91,7 +89,6 @@ class MapController extends Controller
         
         $paths[] = $a;
         $paths = array_reverse($paths);
-<<<<<<< Updated upstream
 
         //length in min
         $length = floor($S[$b][1]);
@@ -129,16 +126,12 @@ class MapController extends Controller
             }
         }
 
-    	return view('map.result', compact('city_y','city_x', 'paths', 'length', 'cities', 'find_roads', 'roads', 'find_gas_stations', 'gas_stations'));
-=======
         $time = $S[$b][1];
 
         for ($i = 0; $i < count($paths); $i++) {
             $paths[$i] = intval($paths[$i]);
         }
-        
-    	return view('map.result', compact('paths', 'time', 'cities'));
->>>>>>> Stashed changes
+    	return view('map.result', compact('city_y','city_x', 'paths', 'length', 'cities', 'find_roads', 'roads', 'find_gas_stations', 'gas_stations', 'time'));
     }
 
 }

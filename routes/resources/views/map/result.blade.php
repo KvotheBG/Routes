@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< Updated upstream
+
 <div class="container single-panel">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -61,7 +61,6 @@
     </div>
 </div>
 
-=======
 	<div class="container">
         <div style="margin-top: 5px;" class="main-text map-result-heading">
             <span class="green_underlined">
@@ -129,5 +128,5 @@
 	<div>
 		<pre class="text-white">{{ $cities }}</pre>
 	</div>
->>>>>>> Stashed changes
+
 @endsection
