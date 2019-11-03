@@ -22,7 +22,7 @@
 		@foreach($road_types as $road_type)
 			<tr>
 				<td>
-					<a class="text-white" href="{{ route('road_types.show', $road_type->id) }}">{{ $road_type->type_name }}</a>
+					<a class="text-white" href="{{ route('road_types.show', $road_type->id) }}">{{ $road_type->type }}</a>
 				</td>
 				<td>
 					{{ $road_type->delay_factor }}

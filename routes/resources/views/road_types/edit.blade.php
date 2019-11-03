@@ -14,7 +14,7 @@
                     {!! Form::model($road_type, ['method' => 'PUT', 'route' => ['road_types.update', $road_type->id]]) !!}   
                         <div class="form-group">
                             {!! Form::label('type_name', __('auth.Road_type')) !!}
-                            {!! Form::text('type_name', $road_type->type_name, ['class' => 'form-control']) !!}
+                            {!! Form::text('type_name', $road_type->type, ['class' => 'form-control']) !!}
                         </div>
                         @if($errors->has('type_name'))
                             <div class="alert alert-error alert-danger">

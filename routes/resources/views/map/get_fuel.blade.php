@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'travel');
+$conn = mysqli_connect('localhost', 'root', '', 'road');
 if (!$conn) {
     die('Could not connect: ' . mysqli_error($conn));
 }
@@ -24,5 +24,3 @@ if ($response) {
 
 mysqli_close($conn);
 ?>
-</body>
-</html>

@@ -19,4 +19,8 @@ class Road extends Model
     {
     	return $this->hasMany('App\GasStation');
     }
+    public function roadType()
+    {
+        return $this->hasOne('App\RoadType');
+    }
 }

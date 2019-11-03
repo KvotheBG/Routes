@@ -35,9 +35,9 @@ class RoadCreateRequest extends FormRequest
     public function messages()
     {
         return [
-            'city_x_id.required' => 'City X is required.',
-            'city_y_id.required' => 'City Y is required.',
-            'city_y_id.different' => 'City Y cannot be the same as City X.',
+            'city_x_id.required' => 'City A is required.',
+            'city_y_id.required' => 'City B is required.',
+            'city_y_id.different' => 'City B cannot be the same as City A.',
             'road_type_id.required' => 'The road type field is required!'
         ];
     }

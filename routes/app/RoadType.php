@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class RoadType extends Model
 {
     protected $fillable = [
-    	'type_name', 'delay_factor'
+    	'type', 'delay_factor'
     ];
+    public function road()
+    {
+    	return $this->hasMany('App\Road');
+    }
 }

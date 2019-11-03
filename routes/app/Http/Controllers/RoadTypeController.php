@@ -43,7 +43,7 @@ class RoadTypeController extends Controller
     public function store(RoadTypeCreateRequest $request)
     {
         RoadType::create([
-            'type_name'=> $request->type_name,
+            'type'=> $request->type_name,
             'delay_factor'=> $request->delay_factor
         ]);
 
@@ -86,7 +86,7 @@ class RoadTypeController extends Controller
     {
         $road_type = RoadType::find($id);
         $road_type->update([
-            'type_name' => $request->type_name,
+            'type' => $request->type_name,
             'delay_factor' => $request->delay_factor
         ]);
 

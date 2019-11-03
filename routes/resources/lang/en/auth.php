@@ -84,6 +84,7 @@ return [
     'Methane_price' => 'Methane price',
     'Electricity_price' => 'Electricity price',
     'Add_gas_station' => 'Add gas station',
+    'Photos_and_icons:' => 'Photos and icons:',
 
 
 

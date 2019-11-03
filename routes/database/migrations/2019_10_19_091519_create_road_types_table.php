@@ -15,7 +15,7 @@ class CreateRoadTypesTable extends Migration
     {
         Schema::create('road_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type_name');
+            $table->string('type');
             $table->decimal('delay_factor', 4, 2);
             $table->timestamps();
         });

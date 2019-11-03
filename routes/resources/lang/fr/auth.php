@@ -81,5 +81,6 @@ return [
     'Methane_price' => 'Méthane prix',
     'Electricity_price' => 'Électricité prix',
     'Add_gas_station' => "Ajouter une station d'essence",
+    'Photos_and_icons:' => 'Photos et icônes:',
 
 ];

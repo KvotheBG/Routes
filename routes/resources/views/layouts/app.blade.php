@@ -42,7 +42,7 @@
                 {{__('auth.Made_by')}} <span class="text-success">KvotheBG</span> & <span class="text-success">Martin G</span>, 2019
             </div>
             <div style="position: relative; top: -13px;">
-                Photos and icons: <a target="_blank" class="text-success" href="https://pixabay.com">Pixabay</a> & <a target="_blank" class="text-success" href="https://www.flaticon.com">FLATICON</a>
+                {{__('auth.Photos_and_icons:')}} <a target="_blank" class="text-success" href="https://pixabay.com">Pixabay</a> & <a target="_blank" class="text-success" href="https://www.flaticon.com">FLATICON</a>
             </div>
         <footer>
     </div>

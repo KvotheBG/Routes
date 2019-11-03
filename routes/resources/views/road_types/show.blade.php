@@ -10,7 +10,7 @@
                 <div class="card-body bg-light">
                     <div class="info-row col-md-10">
                         <div class="info-name">Type</div>
-                        <div class="info-value">{{ $road_type->type_name }}</div>
+                        <div class="info-value">{{ $road_type->type }}</div>
                     </div>
                     <div class="info-row col-md-10">
                         <div class="info-name">Delay factor</div>
