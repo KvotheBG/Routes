@@ -129,11 +129,11 @@ td {
 .main-text {
 	font-weight: bold;
 	font-family: Comfortaa;
-	font-size: 3.5vw;
+	font-size: 2.5vw;
 	text-align: center;
 	color: #fff;
-	margin-bottom: 60px;
-	margin-top: 20px;
+	margin-bottom: 30px;
+	margin-top: 2px;
 	text-shadow: 3px 3px #000;
 }
 .home-img {
@@ -143,7 +143,7 @@ td {
 	font-family: Comfortaa;
 	list-style: none;
 	font-weight: bold;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 33.33%;
 }
 .home-ul li {
@@ -350,4 +350,12 @@ footer {
   	.single-panel {
   		margin-top: 15px;
   	}
+}
+.flag{
+	width: 100%;
+	max-width: 30px;
+	height: auto;
+}
+.dropdown-flag{
+	min-width: 6rem;
 }

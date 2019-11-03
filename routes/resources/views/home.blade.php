@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="main-text">@lang('auth.Find_out')<br>{{ __('auth.how_long_your_trip_will_take.') }}</div>
-        <div style="margin-bottom: 50px;" class="row">
+        <div style="margin-bottom: 10px;" class="row">
         	<div class="col-lg-7">
                 <?php
                 if (App::isLocale('en')) {
