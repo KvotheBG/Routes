@@ -4,15 +4,105 @@ html {
 }
 body {
 	height: 100%;
-
 	margin-bottom: 80px;
 	background-color: #343a40;
 	background-image: url('../images/wall.jpg');
-  background-size: cover;
+  	background-size: cover;
 	background-attachment: fixed;
+	margin-bottom: 180px;
 }
 .content {
   flex: 1 0 auto;
+}
+footer {
+	margin-top: 200px;
+	flex-shrink: 0;
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0 -2px 1px #38c172;
+    z-index: -1;
+}
+.footer-main {
+	position: relative;
+	top: -24px;
+	padding: 10px 30px 10px 30px;
+	border-radius: 25px;
+	border: 2px solid #38c172;
+	box-shadow: inset 0 0 7px #38c172;
+	margin-bottom: 3px;
+}
+.footer-main:hover {
+	box-shadow: inset 0 0 12px #38c172;
+	cursor: pointer;
+}
+a.text-success:hover {
+	text-decoration: none;
+}
+.map-result-panel {
+	padding-left: 36px;
+	padding-right: 36px;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #28a745;
+}
+.map-result-img {
+	position: relative;
+	width: 100%;
+	border-radius: 5px;
+	border: 2px solid #fff;
+}
+.map-result-heading {
+	margin-bottom: 65px !important;
+}
+.mar-bott {
+	margin-bottom: 40px;
+}
+.radio {
+	  -webkit-appearance:button;
+	  -moz-appearance:button;
+	  appearance:button;
+	  border:4px solid #ccc;
+	  border-top-color:#bbb;
+	  border-left-color:#bbb;
+	  width:34px;
+	  height:34px;
+	  border-radius:50%;
+}
+.radio-group {
+	margin-bottom: 7px;
+}
+.radio-group:nth-child(5) {
+	margin-bottom: -7px;
+}
+.radio-group:last-child {
+	margin-bottom: -10px;
+}
+.time-label, .time-value {
+	font-weight: bold;
+	font-size: 23px;
+	padding: 10px 20px 10px 20px;
+	text-align: center;
+}
+.time-label {
+	background-color: #28a745;
+}
+.radio-label {
+	display: inline;
+	font-weight: bold;
+	font-size: 20px;
+	position: relative;
+	top: -10.5px;
+	margin-left: 20px;
+}
+.radio:checked{
+  	border: 12px solid #28a745;
+}
+.radio:checked+label {
+	color: #28a745;
+}
+.radio:focus {
+	outline: 0;
 }
 /* navbar */
 .navbar {
@@ -38,12 +128,19 @@ body {
 .menu-link:hover {
 	background-color: #6c757d;
 }
+
 .dropdown-menu a {
 	line-height: 28px;
 }
 .dropdown-menu a:hover {
 	background-color: #28a745;
 }
+
+.green_underlined {
+	border-bottom: 7px solid #28a745;
+	padding: 10px;
+}
+
 .card-header {
 	border-bottom: none;
 	list-style: circle;
@@ -67,6 +164,7 @@ body {
 	color: #fff;
 	text-decoration: none;
 }
+
 /* forms */
 .form-control {
 	background-color: #f8f9fa;
@@ -89,13 +187,16 @@ body {
 	margin-bottom: 40px;
 	filter: drop-shadow(1px 1px 1px #000);
 }
+
 .map-form-group {
 	margin-top: -5px;
 	margin-bottom: 30px;
 }
+
 table {
 	margin-top: 30px;
 }
+
 th {
 	font-size: 16px;
 }
@@ -106,6 +207,34 @@ td, th {
 td {
 	background-color: rgba(255, 255, 255,.05);
 }
+
+.info-row {
+	border: 1px solid #28a745;
+	border-radius: 5px;
+	margin-bottom: 30px;
+	line-height: 40px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 0 3px #808080;
+}
+.info-row:first-child {
+	margin-top: 17px;
+}
+.info-row:last-child {
+	margin-bottom: 17px;
+}
+.info-name {
+	background-color: #28a745;
+	color: #fff;
+	float: left;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-image: linear-gradient(to right, #1e7b34, #4dcb82);
+	margin-right: 40px;
+	box-shadow: 3px 0 4px #4dcb82;
+}
+
 /* create in crud */
 .btn-big {
 	margin-top: 40px;
@@ -148,16 +277,16 @@ td {
 }
 .home-ul li {
 	text-shadow: 4px 4px 1px #000;
-	/*min-height: 90px;*/
-}
-.home-ul li img:hover {
-	filter: brightness(80%);
 }
 .home-ul li img {
 	width: 53.44px;
 	margin-right: 20px;
-	filter: drop-shadow(3px 5px #000);
+	filter: drop-shadow(3px 5px 1px #000);
 }
+.home-ul li img:hover {
+	filter: brightness(80%) drop-shadow(3px 5px 1px #000);
+}
+
 .btn-try-it {
 	width: 200px;
 	display: block;
@@ -170,6 +299,10 @@ td {
   		font-size: 26px;
   		margin-top: 10px;
   		margin-bottom: 40px;
+  	}
+  	.map-result-heading {
+  		margin-top: 0 !important;
+  		margin-bottom: 48px !important;
   	}
   	.home-img {
   		content: url('../images/map_preview_mobile.png');
@@ -191,6 +324,7 @@ td {
   		background-image: url('../images/wall_mobile.jpg');
   	}
 }
+
 /* about page */
 /*.about-heading {
 	color: #fff;
@@ -201,9 +335,11 @@ td {
 	margin-top: 10px;
 	margin-bottom: 70px;
 }*/
+
 hr {
 	border-top: 1px solid #28a745;
 }
+
 .about-text {
 	color: #fff;
 	margin-top: 30px;
@@ -251,6 +387,7 @@ hr {
 .no-padding {
 	padding: 0 !important;
 }
+
 .alert-success {
 	text-align: center;
 	margin-top: 20px;
@@ -263,6 +400,7 @@ hr {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+
 footer {
 	flex-shrink: 0;
 	padding-top: 11px;

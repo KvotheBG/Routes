@@ -25,10 +25,10 @@ class RoadCreateRequest extends FormRequest
     {
         return [
             'city_x_id' => 'required',
-            'city_y_id' => 'required|different:'.$this->request->get('city_x_id'),
+            'city_y_id' => 'required|different:city_x_id',
             'road_type_id' => 'required',
             'speed_limit' => 'required|numeric|integer|gt:1|lte:360',
-            'distance' => 'required|numeric|gt:1|max:6'
+            'distance' => 'required|numeric|gt:1',
         ];
     }
 
