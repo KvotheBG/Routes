@@ -11,6 +11,22 @@ body {
 	background-attachment: fixed;
 	margin-bottom: 180px;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #28a745;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38c172;
+}
 .content {
   flex: 1 0 auto;
 }
@@ -18,14 +34,61 @@ footer {
 	margin-top: 200px;
 	flex-shrink: 0;
 	position: absolute;
+	height: 66px !important;
     bottom: 0px;
     width: 100%;
-    box-shadow: 0 -2px 1px #38c172;
+    box-shadow: 0 -2px 1px #38c172 !important;
     z-index: -1;
+}
+.img-mar-right {
+	margin-right: 8px;
+}
+.gas-st-content {
+	max-height: 279px;
+	overflow-y: scroll;
+	box-shadow: inset 0 -10px 10px -10px #343a40;
+}
+.gas-st-group {
+	margin-bottom: 18px;
+}
+.gas-st-group-heading {
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+.fuel {
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+.map-result-cities-ul {
+	border-left: 10px solid #28a745;
+	list-style: none;
+	margin-bottom: 25px;
+	margin-left: 20px;
+}
+.map-result-cities-ul li {
+	position: relative;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: -61px;
+	line-height: 55px;
+	text-shadow: 2px 2px 1px #000;
+}
+.map-result-cities-ul li:first-child {
+	top: -28px;
+}
+.map-result-cities-ul li:last-child {
+	bottom: -28px;
+}
+.map-result-cities-ul li img {
+	margin-right: 20px;
+	filter: drop-shadow(1px 1px 1px #000);
+}
+.lang-link:hover {
+	text-decoration: none;
 }
 .footer-main {
 	position: relative;
-	top: -24px;
+	top: -35px;
 	padding: 10px 30px 10px 30px;
 	border-radius: 25px;
 	border: 2px solid #38c172;
@@ -274,6 +337,7 @@ td {
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 33.33%;
+	font-size: 24px;
 }
 .home-ul li {
 	text-shadow: 4px 4px 1px #000;

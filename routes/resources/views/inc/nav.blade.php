@@ -13,29 +13,28 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
 
-                    <a class="nav-link menu-link" href="{{ route('home') }}">@lang('home.home')</a>
+                    <a class="nav-link" href="{{ route('home') }}">@lang('home.home')</a>
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('about') }}">@lang('home.about_us')</a>
+                    <a class="nav-link" href="{{ route('about') }}">@lang('home.about_us')</a>
                 </li>
                 <li class="nav-item {{ Request::is('map') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="{{ route('map') }}">@lang('home.map')</a>
+                    <a class="nav-link" href="{{ route('map') }}">@lang('home.map')</a>
                 </li>
                 
                 @if (Auth::check() && Auth::user()->role == 'admin')
-                    <li class="nav-item dropdown {{ Request::is('cities') || Request::is('road_types') || Request::is('roads') || Request::is('gas_stations') ? 'active' : '' }}">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@lang('home.manage')</a>
+                <li class="nav-item dropdown {{ Request::is('cities') || Request::is('road_types') || Request::is('roads') || Request::is('gas_stations') ? 'active' : '' }}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@lang('home.manage')</a>
 
-                        <div style="border: 1px solid #28a745;" class="dropdown-menu bg-dark no-padding">
-                            <a class="dropdown-item text-white" href="{{ route('cities.index') }}">{{__('auth.Cities')}}</a>
-                            <a class="dropdown-item text-white" href="{{ route('road_types.index') }}">{{__('auth.Road_Types')}}</a>
-                            <a class="dropdown-item text-white" href="{{ route('roads.index') }}">{{__('auth.Roads')}}</a>
-                            <a class="dropdown-item text-white" href="{{ route('gas_stations.index') }}">{{__('auth.Gas_Stations')}}</a>
-                        </div>
-
-                    </li>
+                    <div style="border: 1px solid #28a745;" class="dropdown-menu bg-dark no-padding">
+                        <a class="dropdown-item text-white" href="{{ route('cities.index') }}">{{__('auth.Cities')}}</a>
+                        <a class="dropdown-item text-white" href="{{ route('road_types.index') }}">{{__('auth.Road_Types')}}</a>
+                        <a class="dropdown-item text-white" href="{{ route('roads.index') }}">{{__('auth.Roads')}}</a>
+                        <a class="dropdown-item text-white" href="{{ route('gas_stations.index') }}">{{__('auth.Gas_Stations')}}</a>
+                    </div>
+                </li>
                 @endif
-                <li class="nav-item dropdown">
+<!--                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">  
                         {{ strtoupper (Config::get('app.locale')) }}
                     </a>
@@ -49,7 +48,7 @@
                             <img class="flag" src="{{ asset('images/fr_flag.png') }}">
                         </a>
                     </div>
-                </li>
+                </li> -->
                 {{-- Language --}}
             </ul>
             <!-- Right Side Of Navbar -->
@@ -83,6 +82,18 @@
                         </div>
                     </li>
                 @endguest
+
+                <!-- Language -->
+                <li class="nav-item nav-link">
+                    <a class="btn-link lang-link text-success" href="locale/en">
+                        <img src="{{ asset('images/uk_flag.png') }}" width="24px">
+                    </a>
+                    <span class="text-white"> | </span>
+                    
+                    <a class="btn-link lang-link text-success" href="locale/fr">
+                        <img src="{{ asset('images/fr_flag.png') }}" width="24px">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

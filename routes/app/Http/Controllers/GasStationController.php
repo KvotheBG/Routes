@@ -68,6 +68,18 @@ class GasStationController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $gas_station = GasStation::find($id);
+        return view('gas_stations.show', compact('gas_station'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
