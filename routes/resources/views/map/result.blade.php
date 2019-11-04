@@ -133,7 +133,7 @@
 								@if ($find_gas_stations[$i][5])
 								<div class="fuel metan">
 									<img class="img-mar-right" src="{{ asset('images/fuel.png') }}">
-									{{__('auth.Metan')}}: {{ $find_gas_stations[$i][5] }}€
+									{{__('auth.Methane')}}: {{ $find_gas_stations[$i][5] }}€
 								</div>
 								@endif
 							</div>
