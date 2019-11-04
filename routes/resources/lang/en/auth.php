@@ -89,6 +89,10 @@ return [
     'City_info' => 'City info',
     'Road_info' => 'Road info',
     'Gas_station_info' => 'Gas station info',
-
+    'Route' => 'Route',
+    'Select_fuel' => 'Select fuel',
+    'Time' => 'Time',
+    'Delay' => 'Delay',
+    'distance_from' => 'distance from',
 
 ];

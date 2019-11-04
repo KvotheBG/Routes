@@ -86,4 +86,9 @@ return [
     'City_info' => 'Informations sur la ville',
     'Road_info' => 'Info route',
     'Gas_station_info' => 'Info station service',
+    'Route' => 'Route',
+    'Select_fuel' => 'Choisissez le carburant',
+    'Time' => 'Temps',
+    'Delay' => 'Retard',
+    'distance_from' => 'distance de',
 ];

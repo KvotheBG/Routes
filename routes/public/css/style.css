@@ -116,7 +116,7 @@ a.text-success:hover {
 	border: 2px solid #fff;
 }
 .map-result-heading {
-	margin-bottom: 65px !important;
+	margin-bottom: 15px !important;
 }
 .mar-bott {
 	margin-bottom: 40px;
@@ -546,7 +546,7 @@ footer {
   }
 }
 .single-panel {
-	margin-top: 70px;
+	/*margin-top: 70px;*/
 }
 @media only screen and (max-width: 600px) {
   	.single-panel {
@@ -560,4 +560,7 @@ footer {
 }
 .dropdown-flag{
 	min-width: 6rem;
+}
+.form-padding{
+	margin-top: -10px;
 }

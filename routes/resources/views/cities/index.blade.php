@@ -24,7 +24,6 @@
 					<a href="{{ route('cities.show', $city->id) }}" class="text-white">
 						{{ $city->name }}
 					</a>
-					<a class="text-white" href="{{ route('cities.show', $city->id) }}">{{ $city->name }}</a>
 				</td>	
 				<td>
 					<a href="{{ route('cities.edit', $city->id) }}" class="text-warning">{{__('auth.Update')}}</a>
