@@ -11,15 +11,15 @@
                     {{__('auth.Edit')}} {{__('auth.road_type')}}
                 </div>
                 <div class="card-body bg-light">
-                    {!! Form::model($road_type, ['method' => 'PUT', 'route' => ['road_types.update', $road_type->id]]) !!}   
+                    {!! Form::model($road_type, ['method' => 'PUT', 'route' => ['road_types.update', $road_type->id]]) !!}
                         <div class="form-group">
-                            {!! Form::label('type_name', __('auth.Road_type')) !!}
-                            {!! Form::text('type_name', $road_type->type, ['class' => 'form-control']) !!}
+                            {!! Form::label('type', __('auth.Road_type')) !!}
+                            {!! Form::text('type', $road_type->type, ['class' => 'form-control']) !!}
                         </div>
-                        @if($errors->has('type_name'))
+                        @if($errors->has('type'))
                             <div class="alert alert-error alert-danger">
                                 <ul>
-                                    <li>{{ $errors->first('type_name') }}</li>
+                                    <li>{{ $errors->first('type') }}</li>
                                 </ul>
                             </div>
                         @endif

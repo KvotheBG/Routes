@@ -13,13 +13,13 @@
                 <div class="card-body bg-light">
                     {!! Form::open(['route' => ['road_types.store']]) !!}
                         <div class="form-group">
-                            {!! Form::label('type_name', __('auth.Add_road_type')) !!}
-                            {!! Form::text('type_name', old('type_name'), ['class' => 'form-control']) !!}
+                            {!! Form::label('type', __('auth.Add_road_type')) !!}
+                            {!! Form::text('type', old('type'), ['class' => 'form-control']) !!}
                         </div>
-                        @if($errors->has('type_name'))
+                        @if($errors->has('type'))
                             <div class="alert alert-error alert-danger">
                                 <ul>
-                                    <li>{{ $errors->first('type_name') }}</li>
+                                    <li>{{ $errors->first('type') }}</li>
                                 </ul>
                             </div>
                         @endif

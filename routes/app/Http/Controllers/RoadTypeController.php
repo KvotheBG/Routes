@@ -43,7 +43,7 @@ class RoadTypeController extends Controller
     public function store(RoadTypeCreateRequest $request)
     {
         RoadType::create([
-            'type'=> $request->type_name,
+            'type'=> $request->type,
             'delay_factor'=> $request->delay_factor
         ]);
 
@@ -86,13 +86,14 @@ class RoadTypeController extends Controller
     {
         $road_type = RoadType::find($id);
         $road_type->update([
-            'type' => $request->type_name,
+            'type' => $request->type,
             'delay_factor' => $request->delay_factor
         ]);
 
         return redirect()->route('road_types.index')
             ->withMessage('Road type <span class="bold">edited</span> successfully!');
     }
+    
 
     /**
      * Remove the specified resource from storage.

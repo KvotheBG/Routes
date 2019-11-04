@@ -126,7 +126,7 @@ class MapController extends Controller
 
         for ($i=0; $i < count($paths); $i++) { 
             for ($j=0; $j < $count_gas_stations; $j++) { 
-                if (($paths[$i] == $gas_stations[$j]->city_id && ($gas_stations[$j]->road_id == 1)) ) {
+                if ($paths[$i] == $gas_stations[$j]->city_id && ($gas_stations[$j]->road_id == NULL) ) {
                    $find_gas_stations[$start][0] = $gas_stations[$j]->id;
                    $find_gas_stations[$start][1] = $gas_stations[$j]->diesel_price;
                    $find_gas_stations[$start][2] = $gas_stations[$j]->gasoline_price;
@@ -138,7 +138,7 @@ class MapController extends Controller
                    $find_gas_stations[$start][8] = $gas_stations[$j]->distance_to_the_city;
                    $start++;
                 }
-                if ($find_roads[$i] == $gas_stations[$j]->road_id) {
+                if ($find_roads[$i] == $gas_stations[$j]->road_id && ($gas_stations[$j]->road_id != NULL)) {
                     $find_gas_stations[$start][0] = $gas_stations[$j]->id;
                     $find_gas_stations[$start][1] = $gas_stations[$j]->diesel_price;
                     $find_gas_stations[$start][2] = $gas_stations[$j]->gasoline_price;
@@ -159,7 +159,7 @@ class MapController extends Controller
         }
 
         $dif_delay = $delay_sum-$time;
-        // dd($dif_delay);
+        // dd($find_gas_stations);
     	return view('map.result', compact('city_y','city_x', 'paths', 'length', 'cities', 'find_roads', 'roads', 'find_gas_stations', 'gas_stations', 'time', 'dif_delay'));
     }
 }

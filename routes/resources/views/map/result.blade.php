@@ -109,31 +109,31 @@
 								@if ($find_gas_stations[$i][1])
 								<div class="fuel diesel">
 									<img class="img-mar-right" src="{{ asset('images/fuel.png') }}">
-									{{__('auth.Diesel')}}: {{ $find_gas_stations[$i][1] }}
+									{{__('auth.Diesel')}}: {{ $find_gas_stations[$i][1] }}€
 								</div>
 								@endif
 								@if ($find_gas_stations[$i][2])
 								<div class="fuel gasoline">
 									<img class="img-mar-right" src="{{ asset('images/fuel.png') }}">
-									{{__('auth.Gasoline')}}: {{ $find_gas_stations[$i][2] }}
+									{{__('auth.Gasoline')}}: {{ $find_gas_stations[$i][2] }}€
 								</div>
 								@endif
 								@if ($find_gas_stations[$i][3])
 								<div class="fuel gas">
 									<img class="img-mar-right" src="{{ asset('images/fuel.png') }}">
-									{{__('auth.Gas')}}: {{ $find_gas_stations[$i][3] }}
+									{{__('auth.Gas')}}: {{ $find_gas_stations[$i][3] }}€
 								</div>
 								@endif
 								@if ($find_gas_stations[$i][4])
 								<div class="fuel electricity">
 									<img class="img-mar-right" src="{{ asset('images/electricity.png') }}">
-									{{__('auth.Electricity')}}: {{ $find_gas_stations[$i][4] }}
+									{{__('auth.Electricity')}}: {{ $find_gas_stations[$i][4] }}€
 								</div>
 								@endif
 								@if ($find_gas_stations[$i][5])
 								<div class="fuel metan">
 									<img class="img-mar-right" src="{{ asset('images/fuel.png') }}">
-									{{__('auth.Metan')}}: {{ $find_gas_stations[$i][5] }}
+									{{__('auth.Metan')}}: {{ $find_gas_stations[$i][5] }}€
 								</div>
 								@endif
 							</div>
@@ -141,19 +141,6 @@
 					</div>
 	        	</div>
 	        </div>
-	        {{-- <div class="mar-bott col-lg-3 col-md-8 col-sm-8 col-10 offset-lg-4 offset-md-2 offset-sm-2 offset-1" style="margin-left: 0;">
-	        	<div class="bg-dark map-result-panel text-white">
-	        		<h3 style="padding: 15px 0 40px 0;" class="text-center">{{__('auth.Cities')}}</h3>
-	        		<ul class="map-result-cities-ul">
-	        			@foreach($paths as $path)
-	        				<li>
-	        					<img src="{{ asset('images/point.png') }}" width="32px">
-	        					{{ (App\City::find($path))->name }}
-	        				</li>
-	        			@endforeach
-	        		</ul>
-	        	</div>
-	        </div> --}}
         </div>
     </div>
 @endsection

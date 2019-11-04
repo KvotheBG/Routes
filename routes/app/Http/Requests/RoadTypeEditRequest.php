@@ -26,7 +26,7 @@ class RoadTypeEditRequest extends FormRequest
         $road_id = request()->route('road_type');
 
         return [
-            'type_name' => 'required|unique:road_types,type_name,'.$road_id.',id|max:100',
+            'type' => 'required|unique:road_types,type,'.$road_id.',id|max:100',
             'delay_factor' => 'required|numeric'
         ];
     }

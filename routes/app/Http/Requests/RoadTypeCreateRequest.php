@@ -24,7 +24,7 @@ class RoadTypeCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'type_name' => 'required|unique:road_types,type_name|max:100',
+            'type' => 'required|unique:road_types,type|max:100',
             'delay_factor' => 'required|numeric'
         ];
     }

@@ -88,7 +88,7 @@ class RoadController extends Controller
         $cities_arr = $cities->pluck('name', 'id');
 
         $road_types = RoadType::all();
-        $road_types_arr = $road_types->pluck('type_name', 'id');
+        $road_types_arr = $road_types->pluck('type', 'id');
 
         return view('roads.edit', compact('road', 'cities_arr', 'road_types_arr'));
     }
